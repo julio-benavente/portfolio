@@ -12,6 +12,7 @@ const FrontendSkills = {
   React: "React",
   Typescript: "Typescript",
   Redux: "Redux",
+  FramerMotion: "Framer motion",
   Storybook: "Storybook",
   Git: "Git",
 } as const;
