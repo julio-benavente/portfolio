@@ -14,6 +14,7 @@ export const frontendProjectLists: Array<FrontendProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["React", "Typescript", "Git"],
+    isAvailable: true,
   },
   {
     name: "WeatherVue: Real-time Weather App",
@@ -23,6 +24,7 @@ export const frontendProjectLists: Array<FrontendProject> = [
     figma: "https://figma.com",
     website: "https://google.com",
     skills: ["React", "Redux"],
+    isAvailable: false,
   },
   {
     name: "TaskMaster: Collaborative Task Management Tool",
@@ -32,6 +34,7 @@ export const frontendProjectLists: Array<FrontendProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["React", "Redux", "Storybook"],
+    isAvailable: true,
   },
   {
     name: "InstaSnap: Social Media Image Filter App",
@@ -41,6 +44,7 @@ export const frontendProjectLists: Array<FrontendProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["React", "Typescript"],
+    isAvailable: true,
   },
 ];
 
@@ -53,6 +57,7 @@ export const backendProjectLists: Array<BackendProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["Express", "MongoDB"],
+    isAvailable: true,
   },
   {
     name: "Backend: Real-time Weather App",
@@ -62,6 +67,7 @@ export const backendProjectLists: Array<BackendProject> = [
     figma: "https://figma.com",
     website: "https://google.com",
     skills: ["MongoDB"],
+    isAvailable: true,
   },
   {
     name: "Backend: Collaborative Task Management Tool",
@@ -71,6 +77,7 @@ export const backendProjectLists: Array<BackendProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["Scoket.io", "Express"],
+    isAvailable: true,
   },
   {
     name: "Backend: Social Media Image Filter App",
@@ -80,6 +87,7 @@ export const backendProjectLists: Array<BackendProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["Scoket.io"],
+    isAvailable: false,
   },
 ];
 
@@ -92,6 +100,7 @@ export const fullstackProjectLists: Array<FullstackProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["React", "Express", "MongoDB"],
+    isAvailable: false,
   },
   {
     name: "Fullstack: Real-time Weather App",
@@ -101,6 +110,7 @@ export const fullstackProjectLists: Array<FullstackProject> = [
     figma: "https://figma.com",
     website: "https://google.com",
     skills: ["React", "MongoDB"],
+    isAvailable: true,
   },
   {
     name: "Fullstack: Collaborative Task Management Tool",
@@ -110,6 +120,7 @@ export const fullstackProjectLists: Array<FullstackProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["React", "Scoket.io", "Express"],
+    isAvailable: true,
   },
   {
     name: "Fullstack: Social Media Image Filter App",
@@ -119,6 +130,7 @@ export const fullstackProjectLists: Array<FullstackProject> = [
     figma: "",
     website: "https://google.com",
     skills: ["React", "Scoket.io"],
+    isAvailable: true,
   },
 ];
 

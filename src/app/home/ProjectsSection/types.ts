@@ -15,6 +15,7 @@ const FrontendSkills = {
   FramerMotion: "Framer motion",
   Storybook: "Storybook",
   Git: "Git",
+  NextJS: "NextJS",
 } as const;
 
 const BackendSkills = {
@@ -38,11 +39,12 @@ export type BackendSkillsKeys =
 export type FullstackSkillKeys = FrontendSkillsKeys | BackendSkillsKeys;
 
 export interface BaseProjectInterface {
-  name: string;
-  description: string;
+  name?: string;
+  description?: string;
   github?: string;
   figma?: string;
   website?: string;
+  isAvailable: boolean;
 }
 
 export interface FrontendProject extends BaseProjectInterface {

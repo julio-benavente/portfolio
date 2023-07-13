@@ -8,6 +8,7 @@ import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import { ProjectInterface } from "./types";
 import { useProjectSectionStore } from "./store";
 import cls from "@/helpers/cls";
+import * as C from "@/components";
 
 const ProjectItem = ({ data }: { data: ProjectInterface }) => {
   const currentSkillsList = useProjectSectionStore(
@@ -21,25 +22,41 @@ const ProjectItem = ({ data }: { data: ProjectInterface }) => {
   return (
     <div
       className={cls(
-        "relative w-72 h-72 grid grid-rows-[auto_1fr_auto] p-4 border-primary border-4 bg-white transition-all group",
-        "hover:scale-[104%] hover:bg-primary hover:text-white"
+        "relative w-72 h-72 grid  p-4 border-primary border-4 bg-white transition-all group",
+
+        { "grid-rows-[auto_1fr_auto]": data.isAvailable },
+        {
+          "hover:scale-[104%] hover:bg-primary hover:text-white":
+            data.isAvailable,
+        }
       )}
     >
-      <div
-        className={cls(
-          { hidden: !isFiltered },
-          "absolute w-2 h-full bg-secondary"
-        )}
-      ></div>
-      <h4 className="font-bold mb-2 group-hover:text-white">{data.name}</h4>
-      <p className={cls("group-hover:text-white")}>{data.description}</p>
-      <div className="grid grid-flow-col auto-cols-auto gap-x-4 justify-center mt-auto">
-        {data.github && <ProjectIcon icon={GitHubIcon} url={data.github} />}
-        {data.figma && <ProjectIcon icon={PublicIcon} url={data.figma} />}
-        {data.website && (
-          <ProjectIcon icon={DesignServicesIcon} url={data.website} />
-        )}
-      </div>
+      {data.isAvailable ? (
+        <>
+          <div
+            className={cls(
+              { hidden: !isFiltered },
+              "absolute w-2 h-full bg-secondary"
+            )}
+          ></div>
+          <h4 className="font-bold mb-2 group-hover:text-white">{data.name}</h4>
+          <p className={cls("group-hover:text-white")}>{data.description}</p>
+          <div className="grid grid-flow-col auto-cols-auto gap-x-4 justify-center mt-auto">
+            {data.github && <ProjectIcon icon={GitHubIcon} url={data.github} />}
+            {data.figma && <ProjectIcon icon={PublicIcon} url={data.figma} />}
+            {data.website && (
+              <ProjectIcon icon={DesignServicesIcon} url={data.website} />
+            )}
+          </div>
+        </>
+      ) : (
+        <div className={cls("self-center grid justify-items-center")}>
+          <p className="mb-4 text-center">
+            I don't a project to show off yet. I'd appreciate a suggestion.
+          </p>
+          <C.Button color="secondary">Suggest a project</C.Button>
+        </div>
+      )}
     </div>
   );
 };
