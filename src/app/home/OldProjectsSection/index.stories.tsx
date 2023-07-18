@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ProjectsSection from "./index";
 
 const meta: Meta<typeof ProjectsSection> = {
-  title: "Pages/Home/ProjectsSection",
+  title: "Pages/Home/Projects section",
   component: ProjectsSection,
   parameters: {
     // layout: "fullscreen",
