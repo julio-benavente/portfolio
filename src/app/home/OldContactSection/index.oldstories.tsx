@@ -4,9 +4,6 @@ import ContactSection from "./index";
 const meta: Meta<typeof ContactSection> = {
   title: "Pages/Contact section",
   component: ContactSection,
-  parameters: {
-    // layout: "fullscreen",
-  },
 };
 
 export default meta;
