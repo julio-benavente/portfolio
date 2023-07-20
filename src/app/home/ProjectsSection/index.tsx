@@ -3,6 +3,8 @@ import PortfolioImageOne from "@/../public/assets/images/portfolio-screenshot.pn
 import PortfolioImageTwo from "@/../public/assets/images/portfolio-screenshot-2.png";
 import Image from "next/image";
 import cls from "@/helpers/cls";
+import Parragraph from "../components/Parragraph";
+import SectionTitle from "../components/SectionTitle";
 const index = () => {
   const fakeProject = {
     name: "Monopoly deal",
@@ -30,7 +32,7 @@ const index = () => {
   return (
     <div>
       <div className="p-16">
-        <h2 className="text-3xl mb-16 font-bold">Projects</h2>
+        <SectionTitle className="mb-16">Projects</SectionTitle>
 
         <div className="flex flex-col gap-32">
           {[fakeProject, fakeProject].map((project) => {
@@ -86,22 +88,3 @@ const index = () => {
 };
 
 export default index;
-
-const Parragraph = ({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div
-      className={cls(
-        "flex flex-col gap-6 leading-6 font-light mb-8",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-};

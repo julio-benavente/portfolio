@@ -1,14 +1,15 @@
 import * as C from "@/components";
+import cls from "@/helpers/cls";
 import { ReactNode } from "react";
 
-const SectionTitle = ({ children }: { children: ReactNode }) => {
-  return (
-    <h3 className="text-5xl font-bold mb-4">
-      <C.TextGradientPrimarySecondary>
-        {children}
-      </C.TextGradientPrimarySecondary>
-    </h3>
-  );
+const SectionTitle = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
+  return <h2 className={cls("text-3xl font-bold", className)}>{children}</h2>;
 };
 
 export default SectionTitle;

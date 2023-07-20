@@ -1,5 +1,51 @@
 import type { Preview } from "@storybook/react";
+import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import "../src/app/globals.css";
+
+const customViewports = {
+  extraSmall: {
+    name: "Extra small",
+    styles: {
+      width: "360px",
+      height: "720px",
+    },
+  },
+  small: {
+    name: "Small",
+    styles: {
+      width: "640px",
+      height: "1024px",
+    },
+  },
+  medium: {
+    name: "Medium",
+    styles: {
+      width: "768px",
+      height: "1024px",
+    },
+  },
+  large: {
+    name: "Large",
+    styles: {
+      width: "1024px",
+      height: "768px",
+    },
+  },
+  extraLarge: {
+    name: "Extra Large",
+    styles: {
+      width: "1280px",
+      height: "768px",
+    },
+  },
+  extraExtraLarge: {
+    name: "Extra Extra Large",
+    styles: {
+      width: "1536px",
+      height: "768px",
+    },
+  },
+};
 
 const preview: Preview = {
   parameters: {
@@ -12,6 +58,12 @@ const preview: Preview = {
     },
     nextjs: {
       appDirectory: true,
+    },
+    viewport: {
+      viewports: {
+        // ...MINIMAL_VIEWPORTS,
+        ...customViewports,
+      },
     },
   },
 };
