@@ -37,7 +37,7 @@ const links = [
 ];
 
 const Navbar = () => {
-  const [navbarIsOpen, setNavbarIsOpen] = useState(false);
+  const [navbarIsOpen, setNavbarIsOpen] = useState(true);
 
   const handleHamburgerMenu = () => {
     setNavbarIsOpen(!navbarIsOpen);
@@ -63,22 +63,28 @@ const Navbar = () => {
 
         <div
           onClick={handleHamburgerMenu}
-          className="cursor-pointer"
+          className="cursor-pointer p-1 -right-1"
           ref={handleHamburgerMenuRef}
         >
           {[1, 2, 3].map((e) => (
             <span
               className={cls(
-                "w-6 h-[3px] bg-black block my-1 rounded-full transition-all duration-300 origin-left",
-                { "[&:nth-of-type(1)]:rotate-45": navbarIsOpen },
-                { "[&:nth-of-type(1)]:-translate-y-[1px]": navbarIsOpen },
+                "w-6 h-[3px] bg-black block my-1 rounded-full transition-all duration-300 origin-right relative",
+                { "[&:nth-of-type(1)]:-rotate-45": navbarIsOpen },
+                {
+                  "[&:nth-of-type(1)]:-translate-y-[1px] [&:nth-of-type(1)]:-translate-x-[2px]":
+                    navbarIsOpen,
+                },
                 "[&:nth-of-type(2)]:origin-center",
                 {
                   "[&:nth-of-type(2)]:scale-0 [&:nth-of-type(2)]:duration-75":
                     navbarIsOpen,
                 },
-                { "[&:nth-of-type(3)]:-rotate-45": navbarIsOpen },
-                { "[&:nth-of-type(3)]:translate-y-[1px]": navbarIsOpen }
+                { "[&:nth-of-type(3)]:rotate-45": navbarIsOpen },
+                {
+                  "[&:nth-of-type(3)]:translate-y-[2px] [&:nth-of-type(3)]:-translate-x-[2px]":
+                    navbarIsOpen,
+                }
               )}
             ></span>
           ))}
