@@ -4,7 +4,10 @@
 
 * {
     box-sizing: border-box;
+    @apply font-cabinet;
 }
+
+
 
 p {
     @apply text-text;

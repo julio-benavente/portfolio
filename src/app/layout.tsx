@@ -1,11 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import createCache from "@emotion/cache";
-import { CacheProvider } from "@emotion/react";
-
-function createEmotionCache() {
-  return createCache({ key: "css", prepend: true });
-}
+import localFont from "next/font/local";
+import Head from "next/head";
+import { fontCabinet } from "@/helpers/fontCabinet";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${fontCabinet.variable}`}>{children}</body>
     </html>
   );
 }

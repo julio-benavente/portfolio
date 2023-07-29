@@ -8,15 +8,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        cabinet: ["var(--font-cabinet)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      margin: {
+        17: 68,
+      },
       colors: {
         text: {
-          headline: "#2d2926",
-          DEFAULT: "#5E5B5B",
+          headline: "#1D1D1D",
+          DEFAULT: "#1D1D1D",
           disabled: "#c3c5c4",
         },
         primary: {
@@ -26,7 +32,7 @@ module.exports = {
           300: "#A3BBEB",
           400: "#5F89DB",
           500: "#1A56CC",
-          DEFAULT: "#1A56CC",
+          DEFAULT: "#7575c8",
           600: "#174DB8",
           700: "#10347A",
           800: "#0C275C",

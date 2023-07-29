@@ -1,6 +1,7 @@
+import React from "react";
 import type { Preview } from "@storybook/react";
-import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import "../src/app/globals.css";
+import { fontCabinet } from "../src/helpers/fontCabinet";
 
 const customViewports = {
   extraSmall: {
@@ -66,6 +67,11 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => {
+      return <div className={`${fontCabinet.variable}`}>{<Story />}</div>;
+    },
+  ],
 };
 
 export default preview;
