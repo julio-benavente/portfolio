@@ -1,5 +1,6 @@
 import cls from "@/helpers/cls";
 import { ReactNode } from "react";
+import StarRounded from "@mui/icons-material/StarRounded";
 
 const Badge = ({
   children,
@@ -18,6 +19,7 @@ const Badge = ({
       )}
       {...props}
     >
+      <StarRounded className={cls("text-sm mr-1")} />
       {children}
     </div>
   );
