@@ -1,130 +1,57 @@
 // "use client";
 
 import * as C from "@/components";
-import { useOnClickOutside } from "usehooks-ts";
-import { useRef } from "react";
+import HeroImage from "@/../public/assets/images/profile-test-guy.jpeg";
+import Image from "next/image";
 import cls from "@/helpers/cls";
-import { useState } from "react";
+import StarRounded from "@mui/icons-material/StarRounded";
+import ArrowCircleDownOutlined from "@mui/icons-material/ArrowCircleDownOutlined";
+import Underline from "@/../public/assets/images/underline.svg";
+
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      <C.Navbar />
+      <Hero />
     </div>
   );
 }
 
-const links = [
-  {
-    label: "Home",
-    path: "#",
-  },
-  {
-    label: "Services",
-    path: "#",
-  },
-  {
-    label: "About",
-    path: "#",
-  },
-  {
-    label: "Portfolio",
-    path: "#",
-  },
-  {
-    label: "Contact",
-    path: "#",
-  },
-];
-
-const Navbar = () => {
-  const [navbarIsOpen, setNavbarIsOpen] = useState(true);
-
-  const handleHamburgerMenu = () => {
-    setNavbarIsOpen(!navbarIsOpen);
-  };
-
-  const navRef = useRef<HTMLDivElement>(null);
-  const handleHamburgerMenuRef = useRef<HTMLDivElement>(null);
-
-  useOnClickOutside(navRef, (e) => {
-    if (!handleHamburgerMenuRef?.current?.contains(e.target as Node)) {
-      setNavbarIsOpen(false);
-    }
-  });
-
+const Hero = () => {
   return (
-    <div>
-      <div
-        className={cls(
-          "py-4 px-6 flex flex-column items-center justify-between border-b-2 border-black bg-white"
-        )}
-      >
-        <p className="text-3xl font-bold">Benavente</p>
+    <div className="bg-primaryBg border-b-2 border-black">
+      <div className="mx-6 py-28">
+        <div className="flex flex-col gap-y-12">
+          <div className="rounded-tl-[300px] rounded-tr-[300px] rounded-bl-xl rounded-br-xl overflow-hidden border-2 border-black">
+            <Image src={HeroImage} alt="Hero image" />
+          </div>
+          <div className="flex flex-col items-center">
+            <C.Badge className="mb-7">
+              <StarRounded className={cls("text-sm mr-1")} />
+              Hello!
+            </C.Badge>
 
-        <div
-          onClick={handleHamburgerMenu}
-          className="cursor-pointer p-1 -right-1"
-          ref={handleHamburgerMenuRef}
-        >
-          {[1, 2, 3].map((e) => (
-            <span
-              className={cls(
-                "w-6 h-[3px] bg-black block my-1 rounded-full transition-all duration-300 origin-right relative",
-                { "[&:nth-of-type(1)]:-rotate-45": navbarIsOpen },
-                {
-                  "[&:nth-of-type(1)]:-translate-y-[1px] [&:nth-of-type(1)]:-translate-x-[2px]":
-                    navbarIsOpen,
-                },
-                "[&:nth-of-type(2)]:origin-center",
-                {
-                  "[&:nth-of-type(2)]:scale-0 [&:nth-of-type(2)]:duration-75":
-                    navbarIsOpen,
-                },
-                { "[&:nth-of-type(3)]:rotate-45": navbarIsOpen },
-                {
-                  "[&:nth-of-type(3)]:translate-y-[2px] [&:nth-of-type(3)]:-translate-x-[2px]":
-                    navbarIsOpen,
-                }
-              )}
-            ></span>
-          ))}
+            <h1 className="text-4xl font-bold text-center mb-4">
+              I'm Julio Benavente,
+              <br /> a{" "}
+              <span className="relative">
+                frontend
+                <span className="absolute w-[100%] inline-block -bottom-2 left-0">
+                  <Image src={Underline} alt="underline" />
+                </span>
+              </span>{" "}
+              developer.
+            </h1>
+
+            <p className="text-xl text-center mb-7">
+              I&lsquo;m a frontend developer based in Lima, Peru. I&lsquo;m very
+              passionate about the work I do.
+            </p>
+
+            <C.Button icon={ArrowCircleDownOutlined}>See My Works</C.Button>
+          </div>
         </div>
       </div>
-
-      <div
-        className={cls(
-          "absolute px-6 w-full transition-transform duration-500 -translate-y-full -z-10",
-          {
-            "translate-y-0": navbarIsOpen,
-          }
-        )}
-        ref={navRef}
-      >
-        <nav
-          className={cls(
-            "py-8 px-10 border-b-2 border-l-2 border-r-2 border-black rounded-b-lg"
-          )}
-        >
-          {links.map((link) => (
-            <NavLink {...link} />
-          ))}
-        </nav>
-      </div>
-    </div>
-  );
-};
-
-interface NavLinkProps {
-  label: string;
-  path: string;
-}
-
-const NavLink = (props: NavLinkProps) => {
-  return (
-    <div className="py-2 mb-1">
-      <a href={props.path} className="font-bold text-lg hover:text-primary">
-        {props.label}
-      </a>
     </div>
   );
 };

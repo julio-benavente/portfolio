@@ -25,6 +25,9 @@ module.exports = {
           DEFAULT: "#1D1D1D",
           disabled: "#c3c5c4",
         },
+        primaryBg: {
+          DEFAULT: "#e3e3ff",
+        },
         primary: {
           50: "#F4F7FC",
           100: "#E8EEFA",

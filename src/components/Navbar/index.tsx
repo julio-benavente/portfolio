@@ -57,6 +57,7 @@ const Navbar = () => {
         >
           {[1, 2, 3].map((e) => (
             <span
+              key={e}
               className={cls(
                 "w-6 h-[3px] bg-black block my-1 rounded-full transition-all duration-300 origin-right relative",
                 { "[&:nth-of-type(1)]:-rotate-45": navbarIsOpen },
@@ -95,7 +96,7 @@ const Navbar = () => {
           )}
         >
           {links.map((link) => (
-            <NavLink {...link} />
+            <NavLink key={link.label} {...link} />
           ))}
         </nav>
       </div>
