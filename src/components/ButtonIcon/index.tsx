@@ -12,14 +12,13 @@ interface ButtonProps
   extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   frontClassName?: string;
   edgeClassName?: string;
-  icon?: React.ElementType;
+  icon: React.ElementType;
   href?: string;
   as?: "button" | "a";
 }
 
 const Button = ({
   children,
-  className,
   frontClassName,
   edgeClassName,
   icon: Icon,
@@ -31,19 +30,19 @@ const Button = ({
 
   return (
     <Comp
-      className={cls("relative", className)}
+      className="relative"
       {...props}
       href={as === "a" ? href : "#"}
       target="_blank"
     >
       <div
         className={cls(
-          "flex items-center gap-2 relative py-2 px-7 text-lg base-border outline-none rounded-lg font-medium bg-white transition-all z-10",
-          "top-0 duration-300 hover:top-1 justify-center",
+          "flex items-center gap-2 relative p-2 text-lg base-border outline-none rounded-lg font-medium bg-white transition-all z-10",
+          "top-0 duration-300 hover:top-1",
           frontClassName
         )}
       >
-        {children} {Icon && <Icon className="text-[18px]" />}
+        <Icon className="text-xl" />
       </div>
       <div
         className={cls(

@@ -17,7 +17,7 @@ const index = () => {
 
         <div className="flex flex-col gap-10">
           {skillsList.map((skill) => (
-            <SkillItem {...skill} />
+            <SkillItem key={skill.title} {...skill} />
           ))}
         </div>
       </div>
@@ -36,21 +36,21 @@ const skillsList = [
     color: "purple",
   },
   {
-    title: "Strategy & Planning",
+    title: "Strategy & Planning 2",
     icon: ExtensionTwoToneIcon,
     content:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste illum tenetur molestias non.",
     color: "green",
   },
   {
-    title: "Strategy & Planning",
+    title: "Strategy & Planning 3",
     icon: ExtensionTwoToneIcon,
     content:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste illum tenetur molestias non.",
     color: "pink",
   },
   {
-    title: "Strategy & Planning",
+    title: "Strategy & Planning 4",
     icon: ExtensionTwoToneIcon,
     content:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste illum tenetur molestias non.",
@@ -62,14 +62,14 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
   return (
     <div
       className={cls(
-        "p-10 border-2 border-black rounded-lg flex flex-col gap-5",
+        "p-10 base-border rounded-lg flex flex-col gap-5",
         { "bg-purple-50": props.color === "purple" },
         { "bg-green-50": props.color === "green" },
         { "bg-pink-50": props.color === "pink" },
         { "bg-blue-50": props.color === "blue" }
       )}
     >
-      <div className="w-20 aspect-square rounded-full border-2 border-black grid place-items-center bg-white">
+      <div className="w-20 aspect-square rounded-full base-border grid place-items-center bg-white">
         <Puzzle
           className={cls(
             "w-10 h-10",

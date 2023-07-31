@@ -14,8 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <C.Navbar />
-      <body className={`${fontCabinet.variable}`}>{children}</body>
+      <body className={`${fontCabinet.variable}`}>
+        <C.Navbar />
+        {children}
+      </body>
     </html>
   );
 }

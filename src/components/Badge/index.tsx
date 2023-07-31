@@ -14,7 +14,7 @@ const Badge = ({
   return (
     <div
       className={cls(
-        "uppercase px-3 py-1 text-sm font-extrabold bg-yellow-200 rounded-3xl tracking-wider max-w-fit border-2 border-black flex items-center",
+        "uppercase px-3 py-1 text-sm font-extrabold bg-yellow-200 rounded-3xl tracking-wider max-w-fit base-border flex items-center",
         className
       )}
       {...props}

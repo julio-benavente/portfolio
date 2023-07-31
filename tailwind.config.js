@@ -103,8 +103,33 @@ module.exports = {
           "8xl": theme("maxWidth.8xl"),
         };
       },
+      minHeight: ({ theme }) => {
+        return {
+          xs: theme("maxWidth.xs"),
+          sm: theme("maxWidth.sm"),
+          md: theme("maxWidth.md"),
+          lg: theme("maxWidth.lg"),
+          xl: theme("maxWidth.xl"),
+          "2xl": theme("maxWidth.2xl"),
+          "3xl": theme("maxWidth.3xl"),
+          "4xl": theme("maxWidth.4xl"),
+          "5xl": theme("maxWidth.5xl"),
+          "6xl": theme("maxWidth.6xl"),
+          "7xl": theme("maxWidth.7xl"),
+          "8xl": theme("maxWidth.8xl"),
+        };
+      },
     },
   },
-  plugins: ["prettier-plugin-tailwindcss"],
+  plugins: [
+    "prettier-plugin-tailwindcss",
+    ({ addUtilities }) => {
+      addUtilities({
+        ".base-border": {
+          "@apply border-2 border-black": {},
+        },
+      });
+    },
+  ],
   important: true,
 };
