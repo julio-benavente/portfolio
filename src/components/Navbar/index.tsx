@@ -26,21 +26,23 @@ interface NavLinkProps {
   className?: string;
   linkClassName?: string;
   isActive: boolean;
+  onClick?: () => any;
 }
 
 const NavLink = (props: NavLinkProps) => {
   return (
     <div
       className={cls("py-2 mb-1 cursor-pointer", props.className)}
-      onClick={() =>
+      onClick={() => {
         scroller.scrollTo(props.path.replace("#", ""), {
           duration: 1000,
           delay: 100,
           smooth: "easeInOutQuad",
 
           offset: -75, // Scrolls to element + 50 pixels down the page
-        })
-      }
+        });
+        props.onClick && props.onClick();
+      }}
     >
       <a
         // href={props.path}
@@ -169,6 +171,7 @@ const SmallScreenNavbar = () => {
               key={link.label}
               {...link}
               isActive={activeLink === link.path}
+              onClick={() => setNavbarIsOpen(false)}
             />
           ))}
         </nav>
