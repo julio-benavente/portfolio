@@ -4,15 +4,40 @@ import ExtensionTwoToneIcon from "@mui/icons-material/ExtensionTwoTone";
 import Puzzle from "@/../public/assets/images/puzzle-alt.jsx";
 import Image from "next/image";
 import cls from "@/helpers/cls";
+import PurpleDiamonds from "@/../public/assets/images/purple-diamonds.svg";
+import Thunder from "@/../public/assets/images/thunder.svg";
+
 const index = () => {
   return (
     <div id="soft-skills">
       <div className="container">
-        <div className="flex flex-col items-center mb-14">
+        <div className="relative flex flex-col items-center mb-14 m-auto">
           <C.Badge className="mb-7">Soft skills</C.Badge>
-          <h2 className="text-4xl font-bold text-center max-w-lg">
+          <h2 className="text-4xl font-bold text-center max-w-xl">
             I'd like you to know who you'll be working with
           </h2>
+
+          <div
+            className={cls(
+              "hidden absolute -top-10 right-2",
+              "xs:block",
+              "md:right-14",
+              "lg:right-40"
+            )}
+          >
+            <Image src={PurpleDiamonds} alt="Purple diamonds shining" />
+          </div>
+
+          <div
+            className={cls(
+              "hidden absolute -top-10 left-2",
+              "xs:block",
+              "md:left-10",
+              "lg:top-[10%] lg:left-10"
+            )}
+          >
+            <Image src={Thunder} alt="Purple diamonds shining" />
+          </div>
         </div>
 
         <div className={cls("grid gap-10", "lg:grid-cols-2")}>
