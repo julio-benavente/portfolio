@@ -7,15 +7,15 @@ import cls from "@/helpers/cls";
 const index = () => {
   return (
     <div id="soft-skills">
-      <div className="px-6 py-28 mx-auto">
+      <div className="container">
         <div className="flex flex-col items-center mb-14">
           <C.Badge className="mb-7">Soft skills</C.Badge>
-          <h2 className="text-4xl font-bold text-center">
-            This is who you'll be working with
+          <h2 className="text-4xl font-bold text-center max-w-lg">
+            I'd like you to know who you'll be working with
           </h2>
         </div>
 
-        <div className="flex flex-col gap-10">
+        <div className={cls("grid gap-10", "lg:grid-cols-2")}>
           {skillsList.map((skill) => (
             <SkillItem key={skill.title} {...skill} />
           ))}
@@ -62,14 +62,21 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
   return (
     <div
       className={cls(
-        "p-10 base-border rounded-lg flex flex-col gap-5",
+        "p-10 base-border rounded-lg grid grid-flow-row gap-5",
         { "bg-purple-50": props.color === "purple" },
         { "bg-green-50": props.color === "green" },
         { "bg-pink-50": props.color === "pink" },
-        { "bg-blue-50": props.color === "blue" }
+        { "bg-blue-50": props.color === "blue" },
+
+        "xs:grid-flow-col"
       )}
     >
-      <div className="w-20 aspect-square rounded-full base-border grid place-items-center bg-white">
+      <div
+        className={cls(
+          "w-20 aspect-square rounded-full base-border grid place-items-center bg-white",
+          "xs:justify-self-start"
+        )}
+      >
         <Puzzle
           className={cls(
             "w-10 h-10",

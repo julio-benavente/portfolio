@@ -1,5 +1,6 @@
 import HeroImage from "@/../public/assets/images/profile-test-guy.jpeg";
 import StarBadge from "@/../public/assets/images/star-badge.svg";
+import Diamonds from "@/../public/assets/images/diamonds.svg";
 import Waves from "@/../public/assets/images/waves.svg";
 import Image from "next/image";
 import cls from "@/helpers/cls";
@@ -9,7 +10,10 @@ import * as C from "@/components";
 
 const Hero = () => {
   return (
-    <div id="home" className="bg-primaryBg border-b-2 border-black">
+    <div
+      id="home"
+      className="bg-primaryBg border-b-2 border-black overflow-hidden"
+    >
       <div className="container">
         <div
           className={cls("flex flex-col gap-y-12", "lg:grid lg:grid-cols-12")}
@@ -82,6 +86,10 @@ const HeroImageSide = () => {
         className={cls("hidden absolute bottom-16 -right-20 z-10", "xs:block")}
       >
         <Image src={Waves} alt="Waves" />
+      </div>
+
+      <div className={cls("hidden absolute top-12 -right-10 z-10", "xs:block")}>
+        <Image src={Diamonds} alt="Diamonds shining" />
       </div>
 
       <div className="relative rounded-tl-[300px] rounded-tr-[300px] rounded-bl-xl rounded-br-xl overflow-hidden base-border">
