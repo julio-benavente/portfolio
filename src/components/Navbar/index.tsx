@@ -35,9 +35,9 @@ const NavLink = (props: NavLinkProps) => {
       className={cls("py-2 mb-1 cursor-pointer", props.className)}
       onClick={() => {
         scroller.scrollTo(props.path.replace("#", ""), {
-          duration: 1000,
+          duration: 1500,
           delay: 100,
-          smooth: "easeInOutQuad",
+          smooth: "easeOutCubic",
 
           offset: -75, // Scrolls to element + 50 pixels down the page
         });
