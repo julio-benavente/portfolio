@@ -1,5 +1,5 @@
 import React from "react";
-import C from "@/components";
+import * as C from "@/components";
 
 import Image from "next/image";
 import { GitHub } from "@mui/icons-material";
@@ -7,7 +7,7 @@ import ComputerOutlinedIcon from "@mui/icons-material/ComputerOutlined";
 import worksList from "./worksList";
 const index = () => {
   return (
-    <div>
+    <div id="works">
       <div className="mx-6 py-28">
         <div className="mb-20 flex flex-col items-center">
           <C.Badge className="mb-7">My Works</C.Badge>
@@ -17,7 +17,7 @@ const index = () => {
         </div>
         <div className="flex flex-col gap-24">
           {worksList.map((work) => (
-            <WorkItem {...work} />
+            <WorkItem key={work.name} {...work} />
           ))}
         </div>
       </div>

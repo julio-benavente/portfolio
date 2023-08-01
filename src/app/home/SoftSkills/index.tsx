@@ -1,12 +1,12 @@
 import React from "react";
-import C from "@/components";
+import * as C from "@/components";
 import ExtensionTwoToneIcon from "@mui/icons-material/ExtensionTwoTone";
 import Puzzle from "@/../public/assets/images/puzzle-alt.jsx";
 import Image from "next/image";
 import cls from "@/helpers/cls";
 const index = () => {
   return (
-    <div>
+    <div id="soft-skills">
       <div className="mx-6 py-28">
         <div className="flex flex-col items-center mb-14">
           <C.Badge className="mb-7">Soft skills</C.Badge>

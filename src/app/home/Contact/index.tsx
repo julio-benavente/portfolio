@@ -1,11 +1,10 @@
 import React, { HTMLAttributes } from "react";
-import C from "@/components";
-import { InputProps } from "@mui/material";
+import * as C from "@/components";
 import cls from "@/helpers/cls";
 
 const index = () => {
   return (
-    <div className="relative bg-primaryBg">
+    <div id="contact" className="relative bg-primaryBg">
       <div className="absolute top-0 left-0 w-full h-80 bg-white base-border border-t-0 border-x-0"></div>
       <div className="relative mx-6 z-10">
         <div className="p-10 base-border rounded-lg bg-white">

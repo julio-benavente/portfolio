@@ -1,14 +1,14 @@
 import React from "react";
 import AboutImage from "@/../public/assets/images/profile-fake.jpeg";
 import Image from "next/image";
-import C from "@/components";
+import * as C from "@/components";
 import cls from "@/helpers/cls";
 import Timeline from "./Timeline";
 import Testimonials from "./Testimonials";
 
 const index = () => {
   return (
-    <div className="bg-primaryBg">
+    <div id="experience" className="bg-primaryBg">
       <div className="mx-6 py-28 flex flex-col gap-24">
         <div className="rounded-full base-border overflow-hidden">
           <Image src={AboutImage} alt="profile image" />

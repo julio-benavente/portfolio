@@ -8,7 +8,7 @@ import * as C from "@/components";
 
 const Hero = () => {
   return (
-    <div className="bg-primaryBg border-b-2 border-black">
+    <div id="home" className="bg-primaryBg border-b-2 border-black">
       <div className="mx-6 py-28">
         <div className="flex flex-col gap-y-12">
           <div className="rounded-tl-[300px] rounded-tr-[300px] rounded-bl-xl rounded-br-xl overflow-hidden base-border">

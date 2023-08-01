@@ -1,31 +1,119 @@
 import cls from "@/helpers/cls";
-import { useRef, useState } from "react";
+import { ButtonIcon } from "@/components";
+import { useEffect, useRef, useState } from "react";
 import { useOnClickOutside } from "usehooks-ts";
+import { GitHub, LinkedIn } from "@mui/icons-material";
+import { scroller, scrollSpy } from "react-scroll";
+import useHighlightAcitve from "@/helpers/useHighlightAcitve";
 
 const links = [
   {
     label: "Home",
-    path: "#",
+    path: "#home",
   },
   {
-    label: "Services",
-    path: "#",
+    label: "Soft skill",
+    path: "#soft-skills",
   },
   {
-    label: "About",
-    path: "#",
+    label: "Experience",
+    path: "#experience",
   },
   {
-    label: "Portfolio",
-    path: "#",
+    label: "Works",
+    path: "#works",
   },
   {
     label: "Contact",
-    path: "#",
+    path: "#contact",
   },
 ];
 
 const Navbar = () => {
+  return (
+    <>
+      {/* <SmallScreenNavbar /> */}
+      <BigScreenNavbar />
+    </>
+  );
+};
+
+interface NavLinkProps {
+  label: string;
+  path: string;
+  className?: string;
+  linkClassName?: string;
+  isActive: boolean;
+}
+
+const NavLink = (props: NavLinkProps) => {
+  return (
+    <div
+      className={cls("py-2 mb-1 cursor-pointer", props.className)}
+      onClick={() =>
+        scroller.scrollTo(props.path.replace("#", ""), {
+          duration: 1000,
+          delay: 100,
+          smooth: "easeInOutQuad",
+
+          offset: -75, // Scrolls to element + 50 pixels down the page
+        })
+      }
+    >
+      <a
+        // href={props.path}
+        className={cls(
+          "font-bold text-lg hover:text-primary transition-all duration-300",
+          { "text-primary": props.isActive },
+          props.linkClassName
+        )}
+      >
+        {props.label}
+      </a>
+    </div>
+  );
+};
+
+export default Navbar;
+
+const BigScreenNavbar = () => {
+  const activeLink = useHighlightAcitve(links.map((e) => e.path));
+
+  return (
+    <div className="z-50 fixed top-0 w-full">
+      <div
+        className={cls(
+          "py-4 px-6 flex flex-column items-center justify-between border-b-2 border-black bg-white z-50"
+        )}
+      >
+        <Logo />
+        <div>
+          <nav className="grid grid-flow-col auto-cols-auto gap-12">
+            {links.map((link) => (
+              <NavLink
+                key={link.label}
+                {...link}
+                className="mb-0"
+                isActive={activeLink === link.path}
+              />
+            ))}
+          </nav>
+        </div>
+        <div className="flex flex-row gap-4">
+          <ButtonIcon icon={GitHub} />
+          <ButtonIcon icon={LinkedIn} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Logo = () => {
+  return <p className="text-3xl font-bold">Benavente</p>;
+};
+
+const SmallScreenNavbar = () => {
+  const activeLink = useHighlightAcitve(links.map((e) => e.path));
   const [navbarIsOpen, setNavbarIsOpen] = useState(false);
 
   const handleHamburgerMenu = () => {
@@ -42,14 +130,13 @@ const Navbar = () => {
   });
 
   return (
-    <div className="relative z-50">
+    <div className="z-50 fixed top-0 w-full">
       <div
         className={cls(
           "py-4 px-6 flex flex-column items-center justify-between border-b-2 border-black bg-white z-50"
         )}
       >
-        <p className="text-3xl font-bold">Benavente</p>
-
+        <Logo />
         <div
           onClick={handleHamburgerMenu}
           className="cursor-pointer p-1 -right-1"
@@ -96,27 +183,14 @@ const Navbar = () => {
           )}
         >
           {links.map((link) => (
-            <NavLink key={link.label} {...link} />
+            <NavLink
+              key={link.label}
+              {...link}
+              isActive={activeLink === link.path}
+            />
           ))}
         </nav>
       </div>
     </div>
   );
 };
-
-interface NavLinkProps {
-  label: string;
-  path: string;
-}
-
-const NavLink = (props: NavLinkProps) => {
-  return (
-    <div className="py-2 mb-1">
-      <a href={props.path} className="font-bold text-lg hover:text-primary">
-        {props.label}
-      </a>
-    </div>
-  );
-};
-
-export default Navbar;
