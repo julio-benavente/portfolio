@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+import cls from "./src/helpers/cls";
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -6,7 +9,12 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
+    screens: {
+      xs: "475px",
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         cabinet: ["var(--font-cabinet)"],
@@ -127,6 +135,9 @@ module.exports = {
       addUtilities({
         ".base-border": {
           "@apply border-2 border-black": {},
+        },
+        ".container": {
+          [`@apply ${cls("px-6 py-28 mx-auto max-w-7xl", "xs:px-12")}`]: {},
         },
       });
     },

@@ -64,10 +64,10 @@ const BigScreenNavbar = () => {
   const activeLink = useHighlightAcitve(links.map((e) => e.path));
 
   return (
-    <div className="z-50 fixed top-0 w-full">
+    <div className="z-50 fixed top-0 w-full bg-white base-border border-t-0 border-x-0">
       <div
         className={cls(
-          "py-4 px-6 flex flex-column items-center justify-between border-b-2 border-black bg-white z-50"
+          "container py-4 flex flex-column items-center justify-between z-50"
         )}
       >
         <Logo />
@@ -114,10 +114,10 @@ const SmallScreenNavbar = () => {
   });
 
   return (
-    <div className="z-50 fixed top-0 w-full">
+    <div className="z-50 fixed top-0 w-full bg-white base-border border-t-0 border-x-0">
       <div
         className={cls(
-          "py-4 px-6 flex flex-column items-center justify-between border-b-2 border-black bg-white z-50"
+          "container py-4 flex flex-column items-center justify-between  z-50 bg-white"
         )}
       >
         <Logo />
@@ -156,7 +156,7 @@ const SmallScreenNavbar = () => {
         className={cls(
           "absolute px-6 w-full transition-transform duration-500 -translate-y-full -z-10",
           {
-            "translate-y-0": navbarIsOpen,
+            "translate-y-0.5": navbarIsOpen,
           }
         )}
         ref={navRef}

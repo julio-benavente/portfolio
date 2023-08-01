@@ -1,7 +1,8 @@
 import HeroImage from "@/../public/assets/images/profile-test-guy.jpeg";
+import StarBadge from "@/../public/assets/images/star-badge.svg";
+import Waves from "@/../public/assets/images/waves.svg";
 import Image from "next/image";
 import cls from "@/helpers/cls";
-import StarRounded from "@mui/icons-material/StarRounded";
 import ArrowCircleDownOutlined from "@mui/icons-material/ArrowCircleDownOutlined";
 import Underline from "@/../public/assets/images/underline.svg";
 import * as C from "@/components";
@@ -9,33 +10,12 @@ import * as C from "@/components";
 const Hero = () => {
   return (
     <div id="home" className="bg-primaryBg border-b-2 border-black">
-      <div className="mx-6 py-28">
-        <div className="flex flex-col gap-y-12">
-          <div className="rounded-tl-[300px] rounded-tr-[300px] rounded-bl-xl rounded-br-xl overflow-hidden base-border">
-            <Image src={HeroImage} alt="Hero image" />
-          </div>
-          <div className="flex flex-col items-center">
-            <C.Badge className="mb-7">Hello!</C.Badge>
-
-            <h1 className="text-5xl font-bold text-center mb-4">
-              I'm Julio Benavente,
-              <br /> a{" "}
-              <span className="relative">
-                frontend
-                <span className="absolute w-[100%] inline-block -bottom-2 left-0">
-                  <Image src={Underline} alt="underline" />
-                </span>
-              </span>{" "}
-              developer.
-            </h1>
-
-            <p className="text-xl text-center mb-7">
-              I&lsquo;m a frontend developer based in Lima, Peru. I&lsquo;m very
-              passionate about the work I do.
-            </p>
-
-            <C.Button icon={ArrowCircleDownOutlined}>See My Works</C.Button>
-          </div>
+      <div className="container">
+        <div
+          className={cls("flex flex-col gap-y-12", "lg:grid lg:grid-cols-12")}
+        >
+          <HeroImageSide />
+          <HeadlineSide />
         </div>
       </div>
     </div>
@@ -43,3 +23,70 @@ const Hero = () => {
 };
 
 export default Hero;
+
+const HeadlineSide = () => {
+  return (
+    <div
+      className={cls(
+        "flex flex-col items-center",
+        "lg:items-start lg:justify-center lg:col-start-1 lg:col-span-6 lg:order-1"
+      )}
+    >
+      <C.Badge className="mb-7">Hello!</C.Badge>
+
+      <h1
+        className={cls("text-5xl font-bold text-center mb-4", "lg:text-left")}
+      >
+        I'm Julio Benavente,
+        <br /> a{" "}
+        <span className="relative">
+          frontend
+          <span className="absolute w-[100%] inline-block -bottom-2 left-0">
+            <Image src={Underline} alt="underline" />
+          </span>
+        </span>{" "}
+        developer.
+      </h1>
+
+      <p className={cls("text-xl text-center mb-7", "lg:text-left")}>
+        I&lsquo;m a frontend developer based in Lima, Peru. I&lsquo;m very
+        passionate about the work I do.
+      </p>
+
+      <C.Button icon={ArrowCircleDownOutlined}>See My Works</C.Button>
+    </div>
+  );
+};
+
+const HeroImageSide = () => {
+  return (
+    <div
+      className={cls(
+        "relative max-w-md mx-auto",
+        "lg:col-start-7 col-span-6 lg:order-2"
+      )}
+    >
+      <div
+        className={cls(
+          "hidden",
+          "xs:block xs:absolute xs:top-0 xs:-left-8 z-10"
+        )}
+      >
+        <Image src={StarBadge} alt="Star badge" />
+        <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center -rotate-[18deg] uppercase font-extrabold text-sm">
+          Let&lsquo;s work together
+        </p>
+      </div>
+
+      <div
+        className={cls("hidden absolute bottom-16 -right-20 z-10", "xs:block")}
+      >
+        <Image src={Waves} alt="Waves" />
+      </div>
+
+      <div className="relative rounded-tl-[300px] rounded-tr-[300px] rounded-bl-xl rounded-br-xl overflow-hidden base-border">
+        <Image src={HeroImage} alt="Hero image" />
+      </div>
+    </div>
+  );
+};

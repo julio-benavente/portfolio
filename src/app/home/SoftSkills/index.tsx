@@ -7,7 +7,7 @@ import cls from "@/helpers/cls";
 const index = () => {
   return (
     <div id="soft-skills">
-      <div className="mx-6 py-28">
+      <div className="px-6 py-28 mx-auto">
         <div className="flex flex-col items-center mb-14">
           <C.Badge className="mb-7">Soft skills</C.Badge>
           <h2 className="text-4xl font-bold text-center">

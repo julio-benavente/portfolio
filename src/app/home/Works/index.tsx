@@ -8,7 +8,7 @@ import worksList from "./worksList";
 const index = () => {
   return (
     <div id="works">
-      <div className="mx-6 py-28">
+      <div className="px-6 py-28 mx-auto">
         <div className="mb-20 flex flex-col items-center">
           <C.Badge className="mb-7">My Works</C.Badge>
           <h2 className="text-4xl text-center">

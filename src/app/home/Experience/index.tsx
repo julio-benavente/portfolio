@@ -9,7 +9,7 @@ import Testimonials from "./Testimonials";
 const index = () => {
   return (
     <div id="experience" className="bg-primaryBg">
-      <div className="mx-6 py-28 flex flex-col gap-24">
+      <div className="px-6 py-28 mx-auto flex flex-col gap-24">
         <div className="rounded-full base-border overflow-hidden">
           <Image src={AboutImage} alt="profile image" />
         </div>
