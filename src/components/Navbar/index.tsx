@@ -1,39 +1,21 @@
 import cls from "@/helpers/cls";
 import { ButtonIcon } from "@/components";
 import { useEffect, useRef, useState } from "react";
-import { useOnClickOutside } from "usehooks-ts";
+import { useOnClickOutside, useWindowSize } from "usehooks-ts";
 import { GitHub, LinkedIn } from "@mui/icons-material";
 import { scroller, scrollSpy } from "react-scroll";
 import useHighlightAcitve from "@/helpers/useHighlightAcitve";
-
-const links = [
-  {
-    label: "Home",
-    path: "#home",
-  },
-  {
-    label: "Soft skill",
-    path: "#soft-skills",
-  },
-  {
-    label: "Experience",
-    path: "#experience",
-  },
-  {
-    label: "Works",
-    path: "#works",
-  },
-  {
-    label: "Contact",
-    path: "#contact",
-  },
-];
+import links from "./navLinks";
 
 const Navbar = () => {
+  const { width } = useWindowSize();
+  const bigScreenBreakpoint = 1024;
+  const isBigScreen = width >= bigScreenBreakpoint;
+
   return (
     <>
-      {/* <SmallScreenNavbar /> */}
-      <BigScreenNavbar />
+      {!isBigScreen && <SmallScreenNavbar />}
+      {isBigScreen && <BigScreenNavbar />}
     </>
   );
 };
