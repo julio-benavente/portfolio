@@ -1,8 +1,9 @@
 import cls from "@/helpers/cls";
+import { MutableRefObject, useRef, forwardRef } from "react";
 
 const Timeline = () => {
   return (
-    <div>
+    <div className={cls("lg:col-start-6 lg:col-span-7")}>
       {timelineItemsList.map((item) => (
         <TimelineItem key={`${item.date}-${item.company}`} {...item} />
       ))}
@@ -12,9 +13,14 @@ const Timeline = () => {
 
 export default Timeline;
 
-const TimelineItem = (props: (typeof timelineItemsList)[number]) => {
+type BaseTimelineItemType = (typeof timelineItemsList)[number];
+interface TimelineItemType extends BaseTimelineItemType {}
+
+const TimelineItem = (props: TimelineItemType) => {
   return (
-    <div className="relative group border-l-2 border-black pl-6">
+    <div
+      className={cls("relative group border-l-2 border-black pl-6", "md:ml-52")}
+    >
       <div
         className={cls(
           "absolute w-5 aspect-square border-2 rounded-full border-black top-0 left-0 translate-x-[calc(-50%-1px)] bg-white",
@@ -24,7 +30,14 @@ const TimelineItem = (props: (typeof timelineItemsList)[number]) => {
           { "bg-blue-50": props.color === "blue" }
         )}
       ></div>
-      <p className="uppercase font-bold mb-2">{props.date}</p>
+      <p
+        className={cls(
+          "uppercase font-bold mb-2",
+          "md:absolute md:top-0 md:-left-6 md:-translate-x-full"
+        )}
+      >
+        {props.date}
+      </p>
       <p className="text-2xl font-bold mb-3">
         {props.position} at {props.company}
       </p>
