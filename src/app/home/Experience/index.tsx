@@ -46,7 +46,7 @@ const AboutMyExperience = () => {
       <h2 className="text-4xl font-bold text-center mb-4">My experiences</h2>
       <p className={cls("text-lg mb-6 text-center", "lg:text-left")}>
         I have had the pleasure to work with companies across a variety of
-        industries. I'm always interested in new, exciting and challenging
+        industries. I&lsquo;m always interested in new, exciting and challenging
         adventures.
       </p>
       <C.Button>Download Resume</C.Button>

@@ -44,7 +44,7 @@ const HeadlineSide = () => {
       <h1
         className={cls("text-5xl font-bold text-center mb-4", "lg:text-left")}
       >
-        I'm Julio Benavente,
+        I&lsquo;m Julio Benavente,
         <br /> a{" "}
         <span className="relative">
           frontend

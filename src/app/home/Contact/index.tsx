@@ -21,7 +21,7 @@ const index = () => {
             <C.Badge className="mb-7">Contact</C.Badge>
 
             <h2 className="text-4xl text-center md:max-w-lg md:mx-auto">
-              Got a project in mind? Let's get in touch.
+              Got a project in mind? Let&lsquo;s get in touch.
             </h2>
           </div>
 

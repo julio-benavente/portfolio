@@ -16,7 +16,7 @@ const index = () => {
         <div className="relative flex flex-col items-center mb-14 m-auto">
           <C.Badge className="mb-7">About me</C.Badge>
           <h2 className="text-4xl font-bold text-center max-w-xl">
-            I'd like you to know who you'll be working with
+            I&lsquo;d like you to know who you&lsquo;ll be working with
           </h2>
 
           <div
