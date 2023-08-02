@@ -1,6 +1,7 @@
 "use client";
 
-import HeroImage from "@/../public/assets/images/profile-test-guy.jpeg";
+// import HeroImage from "@/../public/assets/images/profile-test-guy.jpeg";
+import HeroImage from "@/../public/assets/images/ProfileHero.png";
 import StarBadge from "@/../public/assets/images/star-badge.svg";
 import Diamonds from "@/../public/assets/images/diamonds.svg";
 import Waves from "@/../public/assets/images/waves.svg";

@@ -16,8 +16,8 @@ const Navbar = () => {
 
   return (
     <>
-      {!isBigScreen && <SmallScreenNavbar />}
-      {isBigScreen && <BigScreenNavbar />}
+      <SmallScreenNavbar />
+      <BigScreenNavbar />
     </>
   );
 };
@@ -66,7 +66,12 @@ const BigScreenNavbar = () => {
   const activeLink = useHighlightAcitve(links.map((e) => e.path));
 
   return (
-    <div className="z-50 fixed top-0 w-full bg-white border-base border-t-0 border-x-0">
+    <div
+      className={cls(
+        "hidden z-50 fixed top-0 w-full bg-white border-base border-t-0 border-x-0",
+        "lg:block"
+      )}
+    >
       <div
         className={cls(
           "container flex flex-column items-center justify-between z-50",
@@ -117,7 +122,12 @@ const SmallScreenNavbar = () => {
   });
 
   return (
-    <div className="z-50 fixed top-0 w-full bg-white border-base border-t-0 border-x-0">
+    <div
+      className={cls(
+        "z-50 fixed top-0 w-full bg-white border-base border-t-0 border-x-0",
+        "lg:hidden"
+      )}
+    >
       <div
         className={cls(
           "container py-4 flex flex-column items-center justify-between  z-50 bg-white"
