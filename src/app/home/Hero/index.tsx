@@ -18,7 +18,7 @@ const Hero = () => {
       id="home"
       className="bg-primaryBg border-b-2 border-black overflow-hidden"
     >
-      <div className="container">
+      <div className="container pt-44">
         <div
           className={cls("flex flex-col gap-y-12", "lg:grid lg:grid-cols-12")}
         >

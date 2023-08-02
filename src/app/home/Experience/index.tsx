@@ -1,5 +1,6 @@
 import React from "react";
-import AboutImage from "@/../public/assets/images/profile-fake.jpeg";
+// import AboutImage from "@/../public/assets/images/profile-fake.jpeg";
+import AboutImage from "@/../public/assets/images/profile-pic-experience.png";
 import Waves from "@/../public/assets/images/waves-two.svg";
 import Star from "@/../public/assets/images/blue-star-badge.svg";
 import Image from "next/image";
