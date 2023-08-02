@@ -1,3 +1,5 @@
+"use client";
+
 import HeroImage from "@/../public/assets/images/profile-test-guy.jpeg";
 import StarBadge from "@/../public/assets/images/star-badge.svg";
 import Diamonds from "@/../public/assets/images/diamonds.svg";
@@ -7,6 +9,7 @@ import cls from "@/helpers/cls";
 import ArrowCircleDownOutlined from "@mui/icons-material/ArrowCircleDownOutlined";
 import Underline from "@/../public/assets/images/underline.svg";
 import * as C from "@/components";
+import { scroller } from "react-scroll";
 
 const Hero = () => {
   return (
@@ -57,7 +60,20 @@ const HeadlineSide = () => {
         passionate about the work I do.
       </p>
 
-      <C.Button icon={ArrowCircleDownOutlined}>See My Works</C.Button>
+      <C.Button
+        icon={ArrowCircleDownOutlined}
+        onClick={() => {
+          scroller.scrollTo("works", {
+            duration: 2000,
+            delay: 100,
+            smooth: "easeOutCubic",
+
+            offset: -75, // Scrolls to element + 50 pixels down the page
+          });
+        }}
+      >
+        See My Works
+      </C.Button>
     </div>
   );
 };
@@ -92,7 +108,7 @@ const HeroImageSide = () => {
         <Image src={Diamonds} alt="Diamonds shining" />
       </div>
 
-      <div className="relative rounded-tl-[300px] rounded-tr-[300px] rounded-bl-xl rounded-br-xl overflow-hidden base-border">
+      <div className="relative rounded-tl-[300px] rounded-tr-[300px] rounded-bl-xl rounded-br-xl overflow-hidden border-base">
         <Image src={HeroImage} alt="Hero image" />
       </div>
     </div>

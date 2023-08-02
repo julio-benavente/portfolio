@@ -10,7 +10,7 @@ import Testimonials from "./Testimonials";
 
 const index = () => {
   return (
-    <div id="experience" className="bg-primaryBg relative z-10">
+    <div id="experience" className="bg-primaryBg relative z-10 border-base-b">
       <div className={cls("container relative", "xs:pb-72")}>
         <div className="grid grid-flow-row gap-24">
           <PersonalImage />
@@ -58,7 +58,7 @@ const PersonalImage = () => {
   return (
     <>
       <div className="relative max-w-lg mx-auto">
-        <div className="rounded-full base-border overflow-hidden">
+        <div className="rounded-full border-base overflow-hidden">
           <Image src={AboutImage} alt="profile image" />
         </div>
         <div

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import * as C from "@/components";
 
@@ -36,7 +38,7 @@ export default index;
 const WorkItem = (props: (typeof worksList)[number]) => {
   return (
     <div className="">
-      <div className="w-full aspect-[3/2] base-border rounded-lg overflow-hidden mb-10">
+      <div className="w-full aspect-[3/2] border-base rounded-lg overflow-hidden mb-10">
         <Image src={props.image} alt={props.imageAlt} />
       </div>
 

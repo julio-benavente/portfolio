@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Star from "@/../public/assets/images/star.svg";
@@ -32,7 +34,7 @@ const Testimonials = () => {
   return (
     <div
       className={cls(
-        "relative py-12 px-8 base-border rounded-lg mx-2 mt-17 bg-white",
+        "relative py-12 px-8 border-base rounded-lg mx-2 mt-17 bg-white",
         "xs:absolute xs:bottom-0 xs:left-0 xs:mx-10 xs:z-10 xs:translate-y-1/2",
         "md:py-16 md:px-24 md:left-[0%] md:right-[0%] md:max-w-2xl md:mx-auto"
       )}
@@ -121,7 +123,7 @@ const Arrow = ({
   return (
     <div
       className={cls(
-        "absolute w-12 aspect-square base-border rounded-full bg-yellow-200 top-1/2 -translate-y-1/2 grid place-items-center cursor-pointer",
+        "absolute w-12 aspect-square border-base rounded-full bg-yellow-200 top-1/2 -translate-y-1/2 grid place-items-center cursor-pointer",
         { "left-0 -translate-x-1/2": direction === "left" },
         { "right-0 translate-x-1/2": direction === "right" }
       )}

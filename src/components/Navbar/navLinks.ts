@@ -4,8 +4,8 @@ const links = [
     path: "#home",
   },
   {
-    label: "Soft skill",
-    path: "#soft-skills",
+    label: "About",
+    path: "#about",
   },
   {
     label: "Experience",

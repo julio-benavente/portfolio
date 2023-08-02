@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import * as C from "@/components";
 import { GitHub, LinkedIn } from "@mui/icons-material";

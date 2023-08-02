@@ -38,7 +38,7 @@ const Button = ({
     >
       <div
         className={cls(
-          "flex items-center gap-2 relative py-2 px-7 text-lg base-border outline-none rounded-lg font-medium bg-white transition-all z-10",
+          "flex items-center gap-2 relative py-2 px-7 text-lg border-base outline-none rounded-lg font-medium bg-white transition-all z-10",
           "top-0 duration-300 hover:top-1 justify-center",
           frontClassName
         )}
@@ -47,7 +47,7 @@ const Button = ({
       </div>
       <div
         className={cls(
-          "bg-primaryBg absolute w-full h-full top-1.5 base-border rounded-lg transition",
+          "bg-primaryBg absolute w-full h-full top-1.5 border-base rounded-lg transition",
           edgeClassName
         )}
       ></div>

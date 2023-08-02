@@ -7,7 +7,7 @@ const index = () => {
     <div id="contact" className="relative bg-primaryBg">
       <div
         className={cls(
-          "absolute top-0 left-0 w-full h-80 bg-white base-border border-t-0 border-x-0"
+          "absolute top-0 left-0 w-full h-80 bg-white border-base border-t-0 border-x-0"
         )}
       ></div>
       <div
@@ -16,7 +16,7 @@ const index = () => {
           "lg:max-w-5xl lg:mx-auto"
         )}
       >
-        <div className="p-10 base-border rounded-lg bg-white">
+        <div className="p-10 border-base rounded-lg bg-white">
           <div className="flex flex-col items-center mb-12">
             <C.Badge className="mb-7">Contact</C.Badge>
 
@@ -48,7 +48,7 @@ interface TextInputProps extends HTMLAttributes<HTMLInputElement> {}
 interface TextareaInputProps extends HTMLAttributes<HTMLTextAreaElement> {}
 
 const baseInputStyles = cls(
-  "placeholder:text-text-headline py-2 outline-none base-border border-t-0 border-x-0 w-full min-h-[52px] focus:border-primary"
+  "placeholder:text-text-headline py-2 outline-none border-base border-t-0 border-x-0 w-full min-h-[52px] focus:border-primary"
 );
 
 const TextInput = ({ className, ...props }: TextInputProps) => {

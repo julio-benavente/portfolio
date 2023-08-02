@@ -1,3 +1,5 @@
+"use client";
+
 import cls from "@/helpers/cls";
 import { ButtonIcon } from "@/components";
 import { useEffect, useRef, useState } from "react";
@@ -64,10 +66,11 @@ const BigScreenNavbar = () => {
   const activeLink = useHighlightAcitve(links.map((e) => e.path));
 
   return (
-    <div className="z-50 fixed top-0 w-full bg-white base-border border-t-0 border-x-0">
+    <div className="z-50 fixed top-0 w-full bg-white border-base border-t-0 border-x-0">
       <div
         className={cls(
-          "container py-4 flex flex-column items-center justify-between z-50"
+          "container flex flex-column items-center justify-between z-50",
+          "py-4"
         )}
       >
         <Logo />
@@ -114,7 +117,7 @@ const SmallScreenNavbar = () => {
   });
 
   return (
-    <div className="z-50 fixed top-0 w-full bg-white base-border border-t-0 border-x-0">
+    <div className="z-50 fixed top-0 w-full bg-white border-base border-t-0 border-x-0">
       <div
         className={cls(
           "container py-4 flex flex-column items-center justify-between  z-50 bg-white"

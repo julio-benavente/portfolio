@@ -1,3 +1,5 @@
+// "use client";
+
 import cls from "@/helpers/cls";
 import { ReactNode } from "react";
 import StarRounded from "@mui/icons-material/StarRounded";
@@ -14,7 +16,7 @@ const Badge = ({
   return (
     <div
       className={cls(
-        "uppercase px-3 py-1 text-sm font-extrabold bg-yellow-200 rounded-3xl tracking-wider max-w-fit base-border flex items-center",
+        "uppercase px-3 py-1 text-sm font-extrabold bg-yellow-200 rounded-3xl tracking-wider max-w-fit border-base flex items-center",
         className
       )}
       {...props}

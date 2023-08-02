@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import * as C from "@/components";
 import ExtensionTwoToneIcon from "@mui/icons-material/ExtensionTwoTone";
@@ -9,10 +11,10 @@ import Thunder from "@/../public/assets/images/thunder.svg";
 
 const index = () => {
   return (
-    <div id="soft-skills">
+    <div id="about" className="border-base border-t-0 border-x-0">
       <div className="container">
         <div className="relative flex flex-col items-center mb-14 m-auto">
-          <C.Badge className="mb-7">Soft skills</C.Badge>
+          <C.Badge className="mb-7">About me</C.Badge>
           <h2 className="text-4xl font-bold text-center max-w-xl">
             I'd like you to know who you'll be working with
           </h2>
@@ -87,7 +89,7 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
   return (
     <div
       className={cls(
-        "p-10 base-border rounded-lg grid grid-flow-row gap-5",
+        "p-10 border-base rounded-lg grid grid-flow-row gap-5",
         { "bg-purple-50": props.color === "purple" },
         { "bg-green-50": props.color === "green" },
         { "bg-pink-50": props.color === "pink" },
@@ -98,7 +100,7 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
     >
       <div
         className={cls(
-          "w-20 aspect-square rounded-full base-border grid place-items-center bg-white",
+          "w-20 aspect-square rounded-full border-base grid place-items-center bg-white",
           "xs:justify-self-start"
         )}
       >

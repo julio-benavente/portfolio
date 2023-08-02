@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 import cls from "./src/helpers/cls";
 
 module.exports = {
@@ -28,6 +29,7 @@ module.exports = {
         17: 68,
       },
       colors: {
+        "base-border-color": colors.black,
         text: {
           headline: "#1D1D1D",
           DEFAULT: "#1D1D1D",
@@ -131,13 +133,32 @@ module.exports = {
   },
   plugins: [
     "prettier-plugin-tailwindcss",
-    ({ addUtilities }) => {
-      addUtilities({
-        ".base-border": {
-          "@apply border-2 border-black": {},
+    ({ addBase }) => {
+      addBase({
+        ".border-base": {
+          [`@apply ${cls("border-2 border-base-border-color")} !important`]: {},
+        },
+        ".border-base-t": {
+          [`@apply ${cls("border-base-border-color border-t-2")} !important`]:
+            {},
+        },
+        ".border-base-r": {
+          [`@apply ${cls("border-base-border-color border-r-2")} !important`]:
+            {},
+        },
+        ".border-base-b": {
+          [`@apply ${cls("border-base-border-color border-b-2")} !important`]:
+            {},
+        },
+        ".border-base-l": {
+          [`@apply ${cls("border-base-border-color border-l-2")} !important`]:
+            {},
         },
         ".container": {
-          [`@apply ${cls("px-6 py-28 mx-auto max-w-7xl", "xs:px-12")}`]: {},
+          [`@apply ${cls(
+            "px-6 py-28 mx-auto max-w-7xl",
+            "xs:px-12"
+          )} !important`]: {},
         },
       });
     },
