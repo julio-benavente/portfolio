@@ -8,6 +8,7 @@ interface ButtonProps
   icon?: React.ElementType;
   href?: string;
   as?: "button" | "a";
+  download?: string | boolean;
 }
 
 const Button = ({
@@ -17,6 +18,7 @@ const Button = ({
   edgeClassName,
   icon: Icon,
   as,
+  download,
   href = "#",
   ...props
 }: ButtonProps) => {
@@ -27,6 +29,7 @@ const Button = ({
       className={cls("relative", className)}
       {...props}
       href={as === "a" ? href : "#"}
+      download={as === "a" ? download : null}
       target="_blank"
     >
       <div

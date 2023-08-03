@@ -50,7 +50,13 @@ const AboutMyExperience = () => {
         industries. I&lsquo;m always interested in new, exciting and challenging
         adventures.
       </p>
-      <C.Button>Download Resume</C.Button>
+      <C.Button
+        as="a"
+        href="/files/julio_benavente_frontend_developer.pdf"
+        download={true}
+      >
+        Download Resume
+      </C.Button>
     </div>
   );
 };

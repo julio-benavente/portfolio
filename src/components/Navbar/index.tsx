@@ -92,8 +92,16 @@ const BigScreenNavbar = () => {
           </nav>
         </div>
         <div className="flex flex-row gap-4">
-          <ButtonIcon icon={GitHub} />
-          <ButtonIcon icon={LinkedIn} />
+          <ButtonIcon
+            icon={GitHub}
+            as="a"
+            href="https://github.com/julio-benavente"
+          />
+          <ButtonIcon
+            icon={LinkedIn}
+            as="a"
+            href="https://www.linkedin.com/in/julio-benavente-504ba9119/?locale=en_US"
+          />
         </div>
       </div>
     </div>
