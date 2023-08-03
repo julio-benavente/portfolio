@@ -3,7 +3,11 @@
 import React from "react";
 import * as C from "@/components";
 import ExtensionTwoToneIcon from "@mui/icons-material/ExtensionTwoTone";
+import ZoomInOutlinedIcon from "@mui/icons-material/ZoomInOutlined";
+import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
+import Diversity2OutlinedIcon from "@mui/icons-material/Diversity2Outlined";
 import Puzzle from "@/../public/assets/images/puzzle-alt.jsx";
+import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import Image from "next/image";
 import cls from "@/helpers/cls";
 import PurpleDiamonds from "@/../public/assets/images/purple-diamonds.svg";
@@ -56,31 +60,31 @@ export default index;
 
 const skillsList = [
   {
-    title: "Strategy & Planning",
-    icon: ExtensionTwoToneIcon,
+    title: "Problem-Solving",
+    icon: TipsAndUpdatesOutlinedIcon,
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste illum tenetur molestias non.",
+      "I approach challenges creatively, analyze from different angles, and deliver optimal user experiences. It's fulfilling to overcome hurdles and contribute to project success.",
     color: "purple",
   },
   {
-    title: "Strategy & Planning 2",
-    icon: ExtensionTwoToneIcon,
+    title: "Attention to Detail",
+    icon: ZoomInOutlinedIcon,
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste illum tenetur molestias non.",
+      "I carefully make sure that designs are pixel-perfect and that the code is implemented precisely, producing beautiful user interfaces. This thorough approach results in fewer mistakes, a better user experience, and satisfied customers.",
     color: "green",
   },
   {
-    title: "Strategy & Planning 3",
-    icon: ExtensionTwoToneIcon,
+    title: "Continuous Learning",
+    icon: TrendingUpOutlinedIcon,
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste illum tenetur molestias non.",
+      "I am constantly learning new things and keeping up with the newest trends and technologies. I can produce creative solutions by embracing learning opportunities, which improves the caliber of my work and helps me advance professionally.",
     color: "pink",
   },
   {
-    title: "Strategy & Planning 4",
-    icon: ExtensionTwoToneIcon,
+    title: "Positive Attitude",
+    icon: Diversity2OutlinedIcon,
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste illum tenetur molestias non.",
+      "I encourage my colleagues, take on difficulties with enthusiasm, and create a positive work environment. It feeds my imagination and motivates me to complete every endeavor with excellence.",
     color: "blue",
   },
 ];
@@ -104,7 +108,7 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
           "xs:justify-self-start"
         )}
       >
-        <Puzzle
+        <props.icon
           className={cls(
             "w-10 h-10",
             { "fill-purple-900": props.color === "purple" },

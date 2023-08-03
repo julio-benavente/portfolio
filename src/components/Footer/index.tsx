@@ -28,7 +28,7 @@ const Footer = () => {
             <C.ButtonIcon
               icon={LinkedIn}
               as="a"
-              href="linkedin.com/in/julio-benavente-504ba9119/"
+              href="https://www.linkedin.com/in/julio-benavente-504ba9119/?locale=en_US"
             />
           </div>
         </div>

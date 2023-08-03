@@ -13,7 +13,13 @@ const Timeline = () => {
 
 export default Timeline;
 
-type BaseTimelineItemType = (typeof timelineItemsList)[number];
+interface BaseTimelineItemType {
+  date: string;
+  position: string;
+  company: string;
+  content: string | string[];
+  color: string;
+}
 interface TimelineItemType extends BaseTimelineItemType {}
 
 const TimelineItem = (props: TimelineItemType) => {
@@ -41,9 +47,24 @@ const TimelineItem = (props: TimelineItemType) => {
       <p className="text-2xl font-bold mb-3">
         {props.position} at {props.company}
       </p>
-      <p className="text-lg group-[:not(:last-of-type)]:pb-9">
-        {props.content}
-      </p>
+      {typeof props.content === "string" && (
+        <p className="text-lg group-[:not(:last-of-type)]:pb-9">
+          {props.content}
+        </p>
+      )}
+
+      {Array.isArray(props.content) && (
+        <ul className="text-lg group-[:not(:last-of-type)]:pb-9">
+          {props.content.map((e, i) => (
+            <li
+              key={i}
+              className="[&:not(:last-of-type)]:mb-2 list-outside list-disc ml-3"
+            >
+              {e}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
@@ -52,25 +73,31 @@ const timelineItemsList = [
   {
     date: "Oct 2022 - Present",
     position: "Frontend Developer",
-    company: "Systems Solera",
-    content:
-      "Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a consectetuer eget posuere ut mauris. Donec orci lectus aliquam ut.",
+    company: "Systems Solera (AFP Habitat project)",
+    content: [
+      "Developed the UI KIT for the company's affiliates' interface using React, Styled Components, and Storybook, following the design accurately",
+      "Created new features such as the process to affiliate a monthly contribution, a platform to receive documents, the creation of PDF reports, and more",
+    ],
     color: "blue",
   },
   {
-    date: "Oct 2021 - Present",
+    date: "Sep 2022 - Oct 2022",
     position: "Frontend Developer",
     company: "Systems Solera",
-    content:
-      "Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a consectetuer eget posuere ut mauris. Donec orci lectus aliquam ut.",
+    content: [
+      "Designed and built a new set of UI components for a dashboard, improving the user experience",
+      "Contributed to new ideas to improve the user experience of a dashboard which were taken into consideration and finally implemented",
+    ],
     color: "pink",
   },
   {
-    date: "Oct 2020 - Present",
+    date: "Apr 2021 - Mar 2022",
     position: "Frontend Developer",
     company: "Systems Solera",
-    content:
-      "Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a consectetuer eget posuere ut mauris. Donec orci lectus aliquam ut.",
+    content: [
+      "Created a dashboard using the MERN stack to reduce the number of tickets sent to the support team",
+      "Build automation scripts that would increase the team productivity",
+    ],
     color: "green",
   },
 ];
