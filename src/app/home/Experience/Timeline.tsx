@@ -83,7 +83,7 @@ const timelineItemsList = [
   {
     date: "Sep 2022 - Oct 2022",
     position: "Frontend Developer",
-    company: "Systems Solera",
+    company: "Prayaga Solutions",
     content: [
       "Designed and built a new set of UI components for a dashboard, improving the user experience",
       "Contributed to new ideas to improve the user experience of a dashboard which were taken into consideration and finally implemented",
@@ -93,7 +93,7 @@ const timelineItemsList = [
   {
     date: "Apr 2021 - Mar 2022",
     position: "Frontend Developer",
-    company: "Systems Solera",
+    company: "GCC Networking",
     content: [
       "Created a dashboard using the MERN stack to reduce the number of tickets sent to the support team",
       "Build automation scripts that would increase the team productivity",

@@ -30,7 +30,7 @@ const Button = ({
       {...props}
       href={as === "a" ? href : "#"}
       download={as === "a" ? download : null}
-      target="_blank"
+      target={!download ? "_blank" : "_self"}
     >
       <div
         className={cls(
