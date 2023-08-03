@@ -12,7 +12,7 @@ interface UserInput {
   message: string;
 }
 
-const index = () => {
+const Contact = () => {
   const [messageIsSuccessfull, setMessageIsSuccesful] = useState<
     null | boolean
   >(null);
@@ -155,7 +155,7 @@ const index = () => {
   );
 };
 
-export default index;
+export default Contact;
 
 const InputContainer = (props: {
   children: ReactNode;
