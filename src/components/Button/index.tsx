@@ -1,12 +1,5 @@
 import cls from "@/helpers/cls";
-import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
-import {
-  ElementType,
-  HTMLAttributes,
-  ReactComponentElement,
-  ReactElement,
-  ReactNode,
-} from "react";
+import { HTMLAttributes } from "react";
 
 interface ButtonProps
   extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
