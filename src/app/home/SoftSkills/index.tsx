@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import * as C from "@/components";
 import ExtensionTwoToneIcon from "@mui/icons-material/ExtensionTwoTone";
 import ZoomInOutlinedIcon from "@mui/icons-material/ZoomInOutlined";
@@ -12,6 +12,9 @@ import Image from "next/image";
 import cls from "@/helpers/cls";
 import PurpleDiamonds from "@/../public/assets/images/purple-diamonds.svg";
 import Thunder from "@/../public/assets/images/thunder.svg";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { SvgIconTypeMap } from "@mui/material";
+import MaterialSymbol from "@/components/MaterialSymbol";
 
 const index = () => {
   return (
@@ -58,31 +61,44 @@ const index = () => {
 
 export default index;
 
-const skillsList = [
+const skillsList: {
+  title: string;
+  icon: (className?: string) => ReactNode;
+  content: string;
+  color: string;
+}[] = [
   {
     title: "Problem-Solving",
-    icon: TipsAndUpdatesOutlinedIcon,
+    icon: (className?: string) => (
+      <MaterialSymbol className={className}>lightbulb</MaterialSymbol>
+    ),
     content:
       "I approach challenges creatively, analyze from different angles, and deliver optimal user experiences. It's fulfilling to overcome hurdles and contribute to project success.",
     color: "purple",
   },
   {
     title: "Attention to Detail",
-    icon: ZoomInOutlinedIcon,
+    icon: (className?: string) => (
+      <MaterialSymbol className={className}>pinch_zoom_in</MaterialSymbol>
+    ),
     content:
       "I carefully make sure that designs are pixel-perfect and that the code is implemented precisely, producing beautiful user interfaces. This thorough approach results in fewer mistakes, a better user experience, and satisfied customers.",
     color: "green",
   },
   {
     title: "Continuous Learning",
-    icon: TrendingUpOutlinedIcon,
+    icon: (className?: string) => (
+      <MaterialSymbol className={className}>trending_up</MaterialSymbol>
+    ),
     content:
       "I am constantly learning new things and keeping up with the newest trends and technologies. I can produce creative solutions by embracing learning opportunities, which improves the caliber of my work and helps me advance professionally.",
     color: "pink",
   },
   {
     title: "Positive Attitude",
-    icon: Diversity2OutlinedIcon,
+    icon: (className?: string) => (
+      <MaterialSymbol className={className}>diversity_2</MaterialSymbol>
+    ),
     content:
       "I encourage my colleagues, take on difficulties with enthusiasm, and create a positive work environment. It feeds my imagination and motivates me to complete every endeavor with excellence.",
     color: "blue",
@@ -108,15 +124,15 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
           "xs:justify-self-start"
         )}
       >
-        <props.icon
-          className={cls(
-            "w-10 h-10",
-            { "fill-purple-900": props.color === "purple" },
-            { "fill-green-900": props.color === "green" },
-            { "fill-pink-900": props.color === "pink" },
-            { "fill-blue-900": props.color === "blue" }
-          )}
-        />
+        {props.icon(
+          cls(
+            "text-4xl",
+            { "text-purple-900": props.color === "purple" },
+            { "text-green-900": props.color === "green" },
+            { "text-pink-900": props.color === "pink" },
+            { "text-blue-900": props.color === "blue" }
+          )
+        )}
       </div>
       <div>
         <h3 className="text-2xl font-bold mb-3">{props.title}</h3>

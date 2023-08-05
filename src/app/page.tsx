@@ -6,6 +6,8 @@ import Experience from "./home/Experience";
 import Works from "./home/Works";
 import Contact from "./home/Contact";
 
+import "material-symbols/outlined.css";
+
 export default function Home() {
   return (
     <div>
