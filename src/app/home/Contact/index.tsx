@@ -1,6 +1,6 @@
 "use client";
 
-import React, { HTMLAttributes, MouseEvent, ReactNode, useState } from "react";
+import React, { HTMLAttributes, ReactNode, useState } from "react";
 import * as C from "@/components";
 import cls from "@/helpers/cls";
 import axios from "axios";
@@ -90,22 +90,22 @@ const Contact = () => {
           >
             <InputContainer errorMessage={errors.name?.message}>
               <TextInput
-                placeholder="What's your name? *"
+                placeholder="What's your name?"
                 register={register("name", {
-                  required: "I want to know whom I'll answer",
+                  required: "I need you name 😉",
                 })}
               />
             </InputContainer>
 
             <InputContainer errorMessage={errors.email?.message}>
               <TextInput
-                placeholder="What's your email? *"
+                placeholder="What's your email?"
                 register={register("email", {
-                  required: "Don't forget the email",
+                  required: "Don't forget the email 😅",
                   pattern: {
                     value:
                       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                    message: "That email doesn't look real mmm...",
+                    message: "That email doesn't look real 🤔",
                   },
                 })}
               />
@@ -118,7 +118,7 @@ const Contact = () => {
               <TextareaInput
                 placeholder="Tell me about your project"
                 register={register("message", {
-                  required: "... I expect a message",
+                  required: "... I expect a message 🙄",
                 })}
               />
             </InputContainer>
