@@ -5,7 +5,7 @@ const testimonialsList = [
     position: "Scrum Master",
     company: "AFP Habitat",
     testimonial:
-      '"I had the privilege of working with Julio Benavente on various. From the beginning, I was able to highlight his good attitude, his extensive knowledge, and his willingness to learn. He was always willing to provide support to others and share his knowledge. His contribution to the team was invaluable, as he was always collaborative and willing to work as a team."',
+      '"I had the privilege of working with Julio Benavente on various projects. From the beginning, I was able to highlight his good attitude, his extensive knowledge, and his willingness to learn. He was always willing to provide support to others and share his knowledge. His contribution to the team was invaluable, as he was always collaborative and willing to work as a team."',
   },
   {
     id: 1,

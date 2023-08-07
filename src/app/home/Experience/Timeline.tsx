@@ -73,7 +73,7 @@ const timelineItemsList = [
   {
     date: "Oct 2022 - Present",
     position: "Frontend Developer",
-    company: "Systems Solera (AFP Habitat project)",
+    company: "Solera Systems (AFP Habitat project)",
     content: [
       "Developed the UI KIT for the company's affiliates' interface using React, Styled Components, and Storybook, following the design accurately",
       "Created new features such as the process to affiliate a monthly contribution, a platform to receive documents, the creation of PDF reports, and more",
