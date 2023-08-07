@@ -93,7 +93,7 @@ const HeroImageSide = () => {
           "xs:block xs:absolute xs:top-0 xs:-left-8 z-10"
         )}
       >
-        <Image src={StarBadge} alt="Star badge" />
+        <Image src={StarBadge} alt="Star badge" priority={true} />
         <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center -rotate-[18deg] uppercase font-extrabold text-sm">
           Let&lsquo;s work together
         </p>
