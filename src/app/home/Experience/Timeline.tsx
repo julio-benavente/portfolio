@@ -96,7 +96,7 @@ const timelineItemsList = [
     company: "GCC Networking",
     content: [
       "Created a dashboard using the MERN stack to reduce the number of tickets sent to the support team",
-      "Build automation scripts that would increase the team productivity",
+      "Built automation scripts to increase team productivity",
     ],
     color: "green",
   },
