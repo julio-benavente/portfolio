@@ -57,8 +57,8 @@ const HeadlineSide = () => {
       </h1>
 
       <p className={cls("text-xl text-center mb-7", "lg:text-left")}>
-        I&lsquo;m a frontend developer based in Lima, Peru. I&lsquo;m very
-        passionate about the work I do.
+        I&lsquo;m a frontend developer specializing in React. I&lsquo;m very
+        passionate and committed about the work I do.
       </p>
 
       <C.Button
