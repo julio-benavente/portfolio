@@ -87,7 +87,7 @@ const HeroImageSide = () => {
         "lg:col-start-7 col-span-6 lg:order-2"
       )}
     >
-      <div
+      {/* <div
         className={cls(
           "hidden",
           "xs:block xs:absolute xs:top-0 xs:-left-8 z-10"
@@ -97,13 +97,13 @@ const HeroImageSide = () => {
         <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center -rotate-[18deg] uppercase font-extrabold text-sm">
           Let&lsquo;s work together
         </p>
-      </div>
+      </div> */}
 
-      <div
+      {/* <div
         className={cls("hidden absolute bottom-16 -right-20 z-10", "xs:block")}
       >
         <Image src={Waves} alt="Waves" />
-      </div>
+      </div> */}
 
       <div className={cls("hidden absolute top-12 -right-10 z-10", "xs:block")}>
         <Image src={Diamonds} alt="Diamonds shining" />

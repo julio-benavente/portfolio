@@ -77,7 +77,7 @@ const PersonalImage = () => {
           <Image src={Waves} alt="Purple diamonds shining" />
         </div>
 
-        <div
+        {/* <div
           className={cls(
             "relative hidden absolute top-6 -right-10 z-10",
             "xs:block"
@@ -87,7 +87,7 @@ const PersonalImage = () => {
           <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center -rotate-[18deg] uppercase font-extrabold text-sm">
             Let&lsquo;s work together
           </p>
-        </div>
+        </div> */}
       </div>
     </>
   );
