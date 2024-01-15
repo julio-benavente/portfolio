@@ -39,21 +39,25 @@ const WorkItem = (props: (typeof worksList)[number]) => {
   return (
     <div className="">
       <div className="w-full aspect-[3/2] border-base rounded-lg overflow-hidden mb-10">
-        <Image src={props.image} alt={props.imageAlt} className="object-fill" />
+        <Image
+          src={props.image}
+          alt={props.imageAlt}
+          className="object-cover w-full h-full object-top"
+        />
       </div>
 
       <h3 className="text-2xl font-medium mb-2">{props.name}</h3>
       <p className="text-lg mb-5">{props.description}</p>
       <div className="flex flex-row gap-4">
-        {props.githubLink && (
-          <C.ButtonIcon icon={GitHub} as="a" href={props.githubLink} />
-        )}
         {props.websiteLink && (
           <C.ButtonIcon
             icon={ComputerOutlinedIcon}
             as="a"
             href={props.websiteLink}
           />
+        )}
+        {props.githubLink && (
+          <C.ButtonIcon icon={GitHub} as="a" href={props.githubLink} />
         )}
       </div>
     </div>
