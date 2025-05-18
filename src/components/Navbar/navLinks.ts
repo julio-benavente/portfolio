@@ -11,10 +11,10 @@ const links = [
     label: "Experience",
     path: "#experience",
   },
-  {
-    label: "Works",
-    path: "#works",
-  },
+  // {
+  //   label: "Works",
+  //   path: "#works",
+  // },
   {
     label: "Contact",
     path: "#contact",

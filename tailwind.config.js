@@ -22,8 +22,7 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       margin: {
         17: 68,
@@ -31,25 +30,37 @@ module.exports = {
       colors: {
         "base-border-color": colors.black,
         text: {
-          headline: "#1D1D1D",
-          DEFAULT: "#1D1D1D",
+          headline: "#fff",
+          DEFAULT: "#fff",
           disabled: "#c3c5c4",
         },
-        primaryBg: {
-          DEFAULT: "#e3e3ff",
+        "primary-bg": {
+          DEFAULT: "#3e3e42",
+          50: "#EDEDEE",
+          100: "#D8D8DA",
+          200: "#B0B0B5",
+          300: "#898990",
+          400: "#636369",
+          500: "#3E3E42",
+          600: "#313135",
+          700: "#252527",
+          800: "#19191A",
+          900: "#0C0C0D",
+          950: "#070708",
         },
         primary: {
-          50: "#F4F7FC",
-          100: "#E8EEFA",
-          200: "#C6D5F2",
-          300: "#A3BBEB",
-          400: "#5F89DB",
-          500: "#1A56CC",
-          DEFAULT: "#7575c8",
-          600: "#174DB8",
-          700: "#10347A",
-          800: "#0C275C",
-          900: "#081A3D",
+          50: "#E2F3FD",
+          100: "#C5E8FC",
+          200: "#8BD0F9",
+          300: "#4CB7F5",
+          400: "#12A0F2",
+          500: "#0A7BBD",
+          DEFAULT: "#0A7BBD",
+          600: "#086296",
+          700: "#06496F",
+          800: "#04334D",
+          900: "#021927",
+          950: "#010D13",
         },
         secondary: {
           50: "#F4FAFD",
@@ -139,26 +150,19 @@ module.exports = {
           [`@apply ${cls("border-2 border-base-border-color")} !important`]: {},
         },
         ".border-base-t": {
-          [`@apply ${cls("border-base-border-color border-t-2")} !important`]:
-            {},
+          [`@apply ${cls("border-base-border-color border-t-2")} !important`]: {},
         },
         ".border-base-r": {
-          [`@apply ${cls("border-base-border-color border-r-2")} !important`]:
-            {},
+          [`@apply ${cls("border-base-border-color border-r-2")} !important`]: {},
         },
         ".border-base-b": {
-          [`@apply ${cls("border-base-border-color border-b-2")} !important`]:
-            {},
+          [`@apply ${cls("border-base-border-color border-b-2")} !important`]: {},
         },
         ".border-base-l": {
-          [`@apply ${cls("border-base-border-color border-l-2")} !important`]:
-            {},
+          [`@apply ${cls("border-base-border-color border-l-2")} !important`]: {},
         },
         ".container": {
-          [`@apply ${cls(
-            "px-6 py-28 mx-auto max-w-7xl",
-            "xs:px-12"
-          )} !important`]: {},
+          [`@apply ${cls("px-6 py-28 mx-auto max-w-7xl", "xs:px-12")} !important`]: {},
         },
       });
     },

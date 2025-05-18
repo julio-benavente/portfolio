@@ -1,8 +1,7 @@
 import cls from "@/helpers/cls";
 import { HTMLAttributes } from "react";
 
-interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   frontClassName?: string;
   edgeClassName?: string;
   icon?: React.ElementType;
@@ -34,8 +33,8 @@ const Button = ({
     >
       <div
         className={cls(
-          "flex items-center gap-2 relative py-2 px-7 text-lg border-base outline-none rounded-lg font-medium bg-white transition-all z-10",
-          "top-0 duration-300 hover:top-1 justify-center",
+          "flex items-center gap-2 relative py-2 px-7 text-lg border-base outline-none rounded-lg font-medium bg-primary transition-all z-10",
+          "top-0 duration-200 hover:top-1 justify-center text-gray-50",
           frontClassName
         )}
       >
@@ -43,7 +42,7 @@ const Button = ({
       </div>
       <div
         className={cls(
-          "bg-primaryBg absolute w-full h-full top-1.5 border-base rounded-lg transition",
+          "absolute w-full h-full top-1.5 border-base rounded-lg transition bg-primary-300",
           edgeClassName
         )}
       ></div>

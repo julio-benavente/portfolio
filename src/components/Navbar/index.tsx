@@ -49,8 +49,8 @@ const NavLink = (props: NavLinkProps) => {
       <a
         // href={props.path}
         className={cls(
-          "font-bold text-lg hover:text-primary transition-all duration-300",
-          { "text-primary": props.isActive },
+          "font-bold text-lg text-gray-50 hover:text-primary-300 transition-all duration-300",
+          { "text-primary-300": props.isActive },
           props.linkClassName
         )}
       >
@@ -66,37 +66,18 @@ const BigScreenNavbar = () => {
   const activeLink = useHighlightAcitve(links.map((e) => e.path));
 
   return (
-    <div
-      className={cls(
-        "hidden z-50 fixed top-0 w-full bg-white border-base border-t-0 border-x-0",
-        "lg:block"
-      )}
-    >
-      <div
-        className={cls(
-          "container flex flex-column items-center justify-between z-50",
-          "py-4"
-        )}
-      >
+    <div className={cls("hidden z-50 fixed top-0 w-full border-base border-t-0 border-x-0 bg-primary-bg", "lg:block")}>
+      <div className={cls("container flex flex-column items-center justify-between z-50", "py-4")}>
         <Logo />
         <div>
           <nav className="grid grid-flow-col auto-cols-auto gap-12">
             {links.map((link) => (
-              <NavLink
-                key={link.label}
-                {...link}
-                className="mb-0"
-                isActive={activeLink === link.path}
-              />
+              <NavLink key={link.label} {...link} className="mb-0" isActive={activeLink === link.path} />
             ))}
           </nav>
         </div>
         <div className="flex flex-row gap-4">
-          <ButtonIcon
-            icon={GitHub}
-            as="a"
-            href="https://github.com/julio-benavente"
-          />
+          <ButtonIcon icon={GitHub} as="a" href="https://github.com/julio-benavente" />
           <ButtonIcon
             icon={LinkedIn}
             as="a"
@@ -109,7 +90,11 @@ const BigScreenNavbar = () => {
 };
 
 const Logo = () => {
-  return <p className="text-3xl font-bold">Benavente</p>;
+  return (
+    <a href="#home" className="text-3xl font-bold text-gray-50">
+      Julio B.
+    </a>
+  );
 };
 
 const SmallScreenNavbar = () => {
@@ -130,23 +115,10 @@ const SmallScreenNavbar = () => {
   });
 
   return (
-    <div
-      className={cls(
-        "z-50 fixed top-0 w-full bg-white border-base border-t-0 border-x-0",
-        "lg:hidden"
-      )}
-    >
-      <div
-        className={cls(
-          "container py-4 flex flex-column items-center justify-between  z-50 bg-white"
-        )}
-      >
+    <div className={cls("z-50 fixed top-0 w-full border-base border-t-0 border-x-0", "lg:hidden")}>
+      <div className={cls("container py-4 flex flex-column items-center justify-between  z-50")}>
         <Logo />
-        <div
-          onClick={handleHamburgerMenu}
-          className="cursor-pointer p-1 -right-1"
-          ref={handleHamburgerMenuRef}
-        >
+        <div onClick={handleHamburgerMenu} className="cursor-pointer p-1 -right-1" ref={handleHamburgerMenuRef}>
           {[1, 2, 3].map((e) => (
             <span
               key={e}
@@ -154,18 +126,15 @@ const SmallScreenNavbar = () => {
                 "w-6 h-[3px] bg-black block my-1 rounded-full transition-all duration-300 origin-right relative",
                 { "[&:nth-of-type(1)]:-rotate-45": navbarIsOpen },
                 {
-                  "[&:nth-of-type(1)]:-translate-y-[1px] [&:nth-of-type(1)]:-translate-x-[2px]":
-                    navbarIsOpen,
+                  "[&:nth-of-type(1)]:-translate-y-[1px] [&:nth-of-type(1)]:-translate-x-[2px]": navbarIsOpen,
                 },
                 "[&:nth-of-type(2)]:origin-center",
                 {
-                  "[&:nth-of-type(2)]:scale-0 [&:nth-of-type(2)]:duration-100":
-                    navbarIsOpen,
+                  "[&:nth-of-type(2)]:scale-0 [&:nth-of-type(2)]:duration-100": navbarIsOpen,
                 },
                 { "[&:nth-of-type(3)]:rotate-45": navbarIsOpen },
                 {
-                  "[&:nth-of-type(3)]:translate-y-[2px] [&:nth-of-type(3)]:-translate-x-[2px]":
-                    navbarIsOpen,
+                  "[&:nth-of-type(3)]:translate-y-[2px] [&:nth-of-type(3)]:-translate-x-[2px]": navbarIsOpen,
                 }
               )}
             ></span>
@@ -174,19 +143,12 @@ const SmallScreenNavbar = () => {
       </div>
 
       <div
-        className={cls(
-          "absolute px-6 w-full transition-transform duration-500 -translate-y-full -z-10",
-          {
-            "translate-y-0.5": navbarIsOpen,
-          }
-        )}
+        className={cls("absolute px-6 w-full transition-transform duration-500 -translate-y-full -z-10", {
+          "translate-y-0.5": navbarIsOpen,
+        })}
         ref={navRef}
       >
-        <nav
-          className={cls(
-            "py-8 px-10 border-b-2 border-l-2 border-r-2 border-black rounded-b-lg bg-white"
-          )}
-        >
+        <nav className={cls("py-8 px-10 border-b-2 border-l-2 border-r-2 border-black rounded-b-lg bg-white")}>
           {links.map((link) => (
             <NavLink
               key={link.label}

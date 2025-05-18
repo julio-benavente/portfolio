@@ -16,26 +16,21 @@ const Testimonials = () => {
   const [currentTestimony, setCurrentTestimony] = useState(0);
   const debouncedValue = useDebounce<number>(currentTestimony, 300);
 
-  const handleTestimoniesNavigation = (
-    direction: Direction,
-    lengthOfArray: number
-  ) => {
+  const handleTestimoniesNavigation = (direction: Direction, lengthOfArray: number) => {
     if (direction === "left") {
       return currentTestimony === 0
         ? setCurrentTestimony(lengthOfArray - 1)
         : setCurrentTestimony(currentTestimony - 1);
     }
 
-    return currentTestimony === lengthOfArray - 1
-      ? setCurrentTestimony(0)
-      : setCurrentTestimony(currentTestimony + 1);
+    return currentTestimony === lengthOfArray - 1 ? setCurrentTestimony(0) : setCurrentTestimony(currentTestimony + 1);
   };
 
   return (
     <div
       className={cls(
         "relative py-12 px-8 border-base rounded-lg mx-2 mt-17 bg-white",
-        "xs:absolute xs:bottom-0 xs:left-0 xs:mx-10 xs:z-10 xs:translate-y-1/2",
+        "xs:bottom-0 xs:left-0 xs:mx-10 xs:z-10",
         "md:py-16 md:px-24 md:left-[0%] md:right-[0%] md:max-w-2xl md:mx-auto"
       )}
     >
@@ -44,10 +39,7 @@ const Testimonials = () => {
 
       <div className="flex flex-row">
         <AnimatePresence mode="wait">
-          <TestimonyItem
-            key={testimonialsList[debouncedValue].id}
-            {...testimonialsList[debouncedValue]}
-          />
+          <TestimonyItem key={testimonialsList[debouncedValue].id} {...testimonialsList[debouncedValue]} />
         </AnimatePresence>
       </div>
     </div>
@@ -118,8 +110,7 @@ const Arrow = ({
   direction: Direction;
   handleNavigation: (direction: Direction, lengthOfArray: number) => void;
 }) => {
-  const Icon =
-    direction === "left" ? ArrowBackRoundedIcon : ArrowForwardRoundedIcon;
+  const Icon = direction === "left" ? ArrowBackRoundedIcon : ArrowForwardRoundedIcon;
   return (
     <div
       className={cls(

@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <SoftSkills />
       <Experience />
-      <Works />
+      {/* <Works /> */}
       <Contact />
     </div>
   );

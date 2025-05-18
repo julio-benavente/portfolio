@@ -14,14 +14,9 @@ import { scroller } from "react-scroll";
 
 const Hero = () => {
   return (
-    <div
-      id="home"
-      className="bg-primaryBg border-b-2 border-black overflow-hidden"
-    >
+    <div id="home" className="bg-primary-bg border-b-2 border-black overflow-hidden">
       <div className="container pt-44">
-        <div
-          className={cls("flex flex-col gap-y-12", "lg:grid lg:grid-cols-12")}
-        >
+        <div className={cls("flex flex-col gap-y-12", "lg:grid lg:grid-cols-12")}>
           <HeroImageSide />
           <HeadlineSide />
         </div>
@@ -42,9 +37,7 @@ const HeadlineSide = () => {
     >
       <C.Badge className="mb-7">Hello!</C.Badge>
 
-      <h1
-        className={cls("text-5xl font-bold text-center mb-4", "lg:text-left")}
-      >
+      <h1 className={cls("text-5xl font-bold text-center mb-4", "lg:text-left")}>
         I&lsquo;m Julio Benavente,
         <br /> a{" "}
         <span className="relative">
@@ -57,8 +50,8 @@ const HeadlineSide = () => {
       </h1>
 
       <p className={cls("text-xl text-center mb-7", "lg:text-left")}>
-        I&lsquo;m a frontend developer specializing in React. I&lsquo;m very
-        passionate and committed about the work I do.
+        I&lsquo;m a frontend developer specializing in React. I&lsquo;m very passionate and committed about the work I
+        do.
       </p>
 
       <C.Button
@@ -81,12 +74,7 @@ const HeadlineSide = () => {
 
 const HeroImageSide = () => {
   return (
-    <div
-      className={cls(
-        "relative max-w-md mx-auto",
-        "lg:col-start-7 col-span-6 lg:order-2"
-      )}
-    >
+    <div className={cls("relative max-w-md mx-auto", "lg:col-start-7 col-span-6 lg:order-2")}>
       {/* <div
         className={cls(
           "hidden",

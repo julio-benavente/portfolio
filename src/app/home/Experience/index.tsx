@@ -11,16 +11,11 @@ import Testimonials from "./Testimonials";
 
 const index = () => {
   return (
-    <div id="experience" className="bg-primaryBg relative z-10 border-base-b">
+    <div id="experience" className="bg-primary-bg relative z-10 border-base-b">
       <div className={cls("container relative", "xs:pb-72")}>
         <div className="grid grid-flow-row gap-24">
           <PersonalImage />
-          <div
-            className={cls(
-              "grid grid-flow-row gap-y-24",
-              "lg:grid-flow-col lg:gap-0 lg:grid-cols-12"
-            )}
-          >
+          <div className={cls("grid grid-flow-row gap-y-24", "lg:grid-flow-col lg:gap-0 lg:grid-cols-12")}>
             <AboutMyExperience />
             <Timeline />
           </div>
@@ -45,16 +40,11 @@ const AboutMyExperience = () => {
     >
       <C.Badge className="mb-7">Experience</C.Badge>
       <h2 className="text-4xl font-bold text-center mb-4">My experiences</h2>
-      <p className={cls("text-lg mb-6 text-center", "lg:text-left")}>
-        I have enjoyed collaborating with businesses in a range of sectors,
-        including marketing, data mining, and financing. I&lsquo;m constantly
-        looking for fresh, fascinating, and difficult challenges.
+      <p className={cls("text-lg mb-6 text-center text-gray-300", "lg:text-left")}>
+        I have enjoyed collaborating with businesses in a range of sectors, including marketing, data mining, and
+        financing. I&lsquo;m constantly looking for fresh, fascinating, and difficult challenges.
       </p>
-      <C.Button
-        as="a"
-        href="/files/julio_benavente_frontend_developer.pdf"
-        download={true}
-      >
+      <C.Button as="a" href="/files/julio_benavente_frontend_developer.pdf" download={true}>
         Download Resume
       </C.Button>
     </div>
@@ -68,12 +58,7 @@ const PersonalImage = () => {
         <div className="rounded-full border-base overflow-hidden">
           <Image src={AboutImage} alt="profile image" />
         </div>
-        <div
-          className={cls(
-            "relative hidden absolute bottom-48 -left-14 z-10",
-            "xs:block"
-          )}
-        >
+        <div className={cls("relative hidden absolute bottom-48 -left-14 z-10", "xs:block")}>
           <Image src={Waves} alt="Purple diamonds shining" />
         </div>
 

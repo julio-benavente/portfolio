@@ -24,42 +24,24 @@ interface TimelineItemType extends BaseTimelineItemType {}
 
 const TimelineItem = (props: TimelineItemType) => {
   return (
-    <div
-      className={cls("relative group border-l-2 border-black pl-6", "md:ml-52")}
-    >
+    <div className={cls("relative group border-l-2 border-black pl-6", "md:ml-52")}>
       <div
         className={cls(
-          "absolute w-5 aspect-square border-2 rounded-full border-black top-0 left-0 translate-x-[calc(-50%-1px)] bg-white",
-          { "bg-purple-50": props.color === "purple" },
-          { "bg-green-50": props.color === "green" },
-          { "bg-pink-50": props.color === "pink" },
-          { "bg-blue-50": props.color === "blue" }
+          "absolute w-5 aspect-square border-2 rounded-full border-black top-0 left-0 translate-x-[calc(-50%-1px)] bg-primary-200"
         )}
       ></div>
-      <p
-        className={cls(
-          "uppercase font-bold mb-2",
-          "md:absolute md:top-0 md:-left-6 md:-translate-x-full"
-        )}
-      >
+      <p className={cls("uppercase font-bold mb-2", "md:absolute md:top-0 md:-left-6 md:-translate-x-full")}>
         {props.date}
       </p>
       <p className="text-2xl font-bold mb-3">
         {props.position} at {props.company}
       </p>
-      {typeof props.content === "string" && (
-        <p className="text-lg group-[:not(:last-of-type)]:pb-9">
-          {props.content}
-        </p>
-      )}
+      {typeof props.content === "string" && <p className="text-lg group-[:not(:last-of-type)]:pb-9">{props.content}</p>}
 
       {Array.isArray(props.content) && (
-        <ul className="text-lg group-[:not(:last-of-type)]:pb-9">
+        <ul className="text-lg group-[:not(:last-of-type)]:pb-16">
           {props.content.map((e, i) => (
-            <li
-              key={i}
-              className="[&:not(:last-of-type)]:mb-2 list-outside list-disc ml-3"
-            >
+            <li key={i} className="[&:not(:last-of-type)]:mb-2 list-outside list-disc ml-3 text-gray-300">
               {e}
             </li>
           ))}
@@ -71,33 +53,57 @@ const TimelineItem = (props: TimelineItemType) => {
 
 const timelineItemsList = [
   {
-    date: "Oct 2022 - Present",
-    position: "Frontend Developer",
-    company: "Solera Systems (AFP Habitat project)",
+    date: "July 2024 - Present",
+    position: "Senior Frontend Developer",
+    company: "Fusion 360",
     content: [
-      "Developed the UI KIT for the company's affiliates' interface using React, Styled Components, and Storybook, following the design accurately",
-      "Created new features such as the process to affiliate a monthly contribution, a platform to receive documents, the creation of PDF reports, and more",
+      "Develop and maintain scalable web applications using React and NextJS with Tailwind CSS to enhance UI design and performance.",
+      "Automate workflows to streamline project delivery and increase team productivity.",
+      "Collaborate with cross-functional teams using Agile methodologies to align development with product goals and UX design.",
     ],
     color: "blue",
   },
   {
-    date: "Sep 2022 - Oct 2022",
+    date: "August 2023 - Present",
+    position: "Frontend Developer",
+    company: "Square Agency LLC",
+    content: [
+      "Design and implement responsive, user-friendly websites using Figma and NextJS with Tailwind, ensuring smooth UX and functionality.",
+      "Build optimized landing pages with a focus on performance, scalability, and cross-browser compatibility.",
+      "Communicate closely with clients to understand goals and deliver high-quality, adaptive solutions.",
+    ],
+    color: "green",
+  },
+  {
+    date: "October 2022 - July 2023",
+    position: "Full Stack Developer",
+    company: "Solera (AFP Habitat Project)",
+    content: [
+      "Developed a reusable UI toolkit with Styled Components and MUI, documented using Storybook for modularity and scalability.",
+      "Integrated APIs for 401k management system, ensuring reliable data flow and high availability.",
+      "Collaborated on user registration UX/UI flows, focusing on intuitive, efficient designs.",
+      "Developed backend APIs using Laravel PHP and Oracle SQL, including third-party biometric validation integration to enhance security.",
+    ],
+    color: "blue",
+  },
+  {
+    date: "September 2022 - October 2022",
     position: "Frontend Developer",
     company: "Prayaga Solutions",
     content: [
-      "Designed and built a new set of UI components for a dashboard, improving the user experience",
-      "Contributed to new ideas to improve the user experience of a dashboard which were taken into consideration and finally implemented",
+      "Identified and proposed UX/UI improvements for an internal communication platform.",
+      "Designed Figma UI elements and implemented them as React components for improved dashboard clarity and accessibility.",
     ],
-    color: "pink",
+    color: "yellow",
   },
   {
-    date: "Apr 2021 - Mar 2022",
-    position: "Frontend Developer",
+    date: "April 2021 - March 2022",
+    position: "Junior Frontend Developer",
     company: "GCC Networking",
     content: [
-      "Created a dashboard using the MERN stack to reduce the number of tickets sent to the support team",
-      "Built automation scripts to increase team productivity",
+      "Developed digital client solutions using React to improve workflows and communications.",
+      "Created APIs using ExpressJS (NodeJS) and MongoDB to enable secure, real-time data interaction with the frontend.",
     ],
-    color: "green",
+    color: "gray",
   },
 ];

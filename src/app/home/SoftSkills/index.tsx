@@ -18,7 +18,7 @@ import MaterialSymbol from "@/components/MaterialSymbol";
 
 const index = () => {
   return (
-    <div id="about" className="border-base border-t-0 border-x-0">
+    <div id="about" className="border-base border-t-0 border-x-0 bg-primary-bg">
       <div className="container">
         <div className="relative flex flex-col items-center mb-14 m-auto">
           <C.Badge className="mb-7">About me</C.Badge>
@@ -26,25 +26,11 @@ const index = () => {
             I&lsquo;d like you to know who you&lsquo;ll be working with
           </h2>
 
-          <div
-            className={cls(
-              "hidden absolute -top-10 right-2",
-              "xs:block",
-              "md:right-14",
-              "lg:right-40"
-            )}
-          >
+          <div className={cls("hidden absolute -top-10 right-2", "xs:block", "md:right-14", "lg:right-40")}>
             <Image src={PurpleDiamonds} alt="Purple diamonds shining" />
           </div>
 
-          <div
-            className={cls(
-              "hidden absolute -top-10 left-2",
-              "xs:block",
-              "md:left-10",
-              "lg:top-[10%] lg:left-10"
-            )}
-          >
+          <div className={cls("hidden absolute -top-10 left-2", "xs:block", "md:left-10", "lg:top-[10%] lg:left-10")}>
             <Image src={Thunder} alt="Purple diamonds shining" />
           </div>
         </div>
@@ -69,36 +55,28 @@ const skillsList: {
 }[] = [
   {
     title: "Problem-Solving",
-    icon: (className?: string) => (
-      <MaterialSymbol className={className}>lightbulb</MaterialSymbol>
-    ),
+    icon: (className?: string) => <MaterialSymbol className={className}>lightbulb</MaterialSymbol>,
     content:
       "I approach challenges creatively, analyze from different angles, and deliver optimal user experiences. It's fulfilling to overcome hurdles and contribute to project success.",
     color: "purple",
   },
   {
     title: "Attention to Detail",
-    icon: (className?: string) => (
-      <MaterialSymbol className={className}>pinch_zoom_in</MaterialSymbol>
-    ),
+    icon: (className?: string) => <MaterialSymbol className={className}>pinch_zoom_in</MaterialSymbol>,
     content:
       "I carefully make sure that designs are pixel-perfect and that the code is implemented precisely, producing beautiful user interfaces. This thorough approach results in fewer mistakes, a better user experience, and satisfied customers.",
     color: "green",
   },
   {
     title: "Continuous Learning",
-    icon: (className?: string) => (
-      <MaterialSymbol className={className}>trending_up</MaterialSymbol>
-    ),
+    icon: (className?: string) => <MaterialSymbol className={className}>trending_up</MaterialSymbol>,
     content:
       "I am constantly learning new things and keeping up with the newest trends and technologies. I can produce creative solutions by embracing learning opportunities, which improves the caliber of my work and helps me advance professionally.",
     color: "pink",
   },
   {
     title: "Positive Attitude",
-    icon: (className?: string) => (
-      <MaterialSymbol className={className}>diversity_2</MaterialSymbol>
-    ),
+    icon: (className?: string) => <MaterialSymbol className={className}>diversity_2</MaterialSymbol>,
     content:
       "I encourage my colleagues, take on difficulties with enthusiasm, and create a positive work environment. It feeds my imagination and motivates me to complete every endeavor with excellence.",
     color: "blue",
@@ -110,10 +88,10 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
     <div
       className={cls(
         "p-10 border-base rounded-lg grid grid-flow-row gap-5",
-        { "bg-purple-50": props.color === "purple" },
-        { "bg-green-50": props.color === "green" },
-        { "bg-pink-50": props.color === "pink" },
-        { "bg-blue-50": props.color === "blue" },
+        // { "bg-purple-50": props.color === "purple" },
+        // { "bg-green-50": props.color === "green" },
+        // { "bg-pink-50": props.color === "pink" },
+        // { "bg-blue-50": props.color === "blue" },
 
         "xs:grid-flow-col"
       )}
