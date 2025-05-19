@@ -41,14 +41,14 @@ const HeadlineSide = () => {
         <span className="relative">
           Frontend
           <span className="absolute w-[100%] inline-block -bottom-2 left-0">
-            <Image src={Underline} alt="underline" />
+            <Image src={Underline} alt="underline" priority={true} />
           </span>
         </span>{" "}
         developer, specializing in{" "}
         <span className="relative">
           React
           <span className="absolute w-[100%] inline-block -bottom-2 left-0">
-            <Image src={Underline} alt="underline" />
+            <Image src={Underline} alt="underline" priority={true} />
           </span>
         </span>{" "}
         and NextJS.
@@ -103,7 +103,7 @@ const HeroImageSide = () => {
       </div>
 
       <div className="relative rounded-tl-[300px] rounded-tr-[300px] rounded-bl-xl rounded-br-xl overflow-hidden border-base">
-        <Image src={HeroImage} alt="Hero image" />
+        <Image src={HeroImage} alt="Hero image" priority={true} />
       </div>
     </div>
   );
