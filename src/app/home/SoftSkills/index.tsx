@@ -87,7 +87,7 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
   return (
     <div
       className={cls(
-        "p-10 border-base rounded-lg grid grid-flow-row gap-5",
+        "p-10 border-base rounded-lg grid grid-flow-row gap-5 bg-primary-bg-700",
         // { "bg-purple-50": props.color === "purple" },
         // { "bg-green-50": props.color === "green" },
         // { "bg-pink-50": props.color === "pink" },
@@ -98,23 +98,23 @@ const SkillItem = (props: (typeof skillsList)[number]) => {
     >
       <div
         className={cls(
-          "w-20 aspect-square rounded-full border-base grid place-items-center bg-white",
+          "w-20 aspect-square rounded-full border-base grid place-items-center bg-primary-bg-800",
           "xs:justify-self-start"
         )}
       >
         {props.icon(
           cls(
             "text-4xl",
-            { "text-purple-900": props.color === "purple" },
-            { "text-green-900": props.color === "green" },
-            { "text-pink-900": props.color === "pink" },
-            { "text-blue-900": props.color === "blue" }
+            { "text-purple-300": props.color === "purple" },
+            { "text-green-300": props.color === "green" },
+            { "text-pink-300": props.color === "pink" },
+            { "text-blue-300": props.color === "blue" }
           )
         )}
       </div>
       <div>
         <h3 className="text-2xl font-bold mb-3">{props.title}</h3>
-        <p className="text-lg">{props.content}</p>
+        <p className="text-lg text-gray-300">{props.content}</p>
       </div>
     </div>
   );

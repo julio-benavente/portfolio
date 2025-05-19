@@ -17,8 +17,8 @@ const Hero = () => {
     <div id="home" className="bg-primary-bg border-b-2 border-black overflow-hidden">
       <div className="container pt-44">
         <div className={cls("flex flex-col gap-y-12", "lg:grid lg:grid-cols-12")}>
-          <HeroImageSide />
           <HeadlineSide />
+          <HeroImageSide />
         </div>
       </div>
     </div>
@@ -31,8 +31,8 @@ const HeadlineSide = () => {
   return (
     <div
       className={cls(
-        "flex flex-col items-center",
-        "lg:items-start lg:justify-center lg:col-start-1 lg:col-span-6 lg:order-1"
+        "flex flex-col items-center mb-40",
+        "lg:items-start lg:justify-center lg:col-start-1 lg:col-span-6 lg:mb-0"
       )}
     >
       <C.Badge className="mb-7">Hello!</C.Badge>
@@ -74,7 +74,7 @@ const HeadlineSide = () => {
 
 const HeroImageSide = () => {
   return (
-    <div className={cls("relative max-w-md mx-auto", "lg:col-start-7 col-span-6 lg:order-2")}>
+    <div className={cls("relative max-w-md mx-auto", "lg:col-start-7 col-span-6")}>
       {/* <div
         className={cls(
           "hidden",

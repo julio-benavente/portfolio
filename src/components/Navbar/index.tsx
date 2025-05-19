@@ -115,8 +115,12 @@ const SmallScreenNavbar = () => {
   });
 
   return (
-    <div className={cls("z-50 fixed top-0 w-full border-base border-t-0 border-x-0", "lg:hidden")}>
-      <div className={cls("container py-4 flex flex-column items-center justify-between  z-50")}>
+    <div className={cls("z-50 fixed top-0 w-full", "lg:hidden")}>
+      <div
+        className={cls(
+          "container py-4 flex flex-column items-center justify-between relative z-[1000] bg-primary-bg border-base border-t-0 border-x-0"
+        )}
+      >
         <Logo />
         <div onClick={handleHamburgerMenu} className="cursor-pointer p-1 -right-1" ref={handleHamburgerMenuRef}>
           {[1, 2, 3].map((e) => (
@@ -143,12 +147,12 @@ const SmallScreenNavbar = () => {
       </div>
 
       <div
-        className={cls("absolute px-6 w-full transition-transform duration-500 -translate-y-full -z-10", {
-          "translate-y-0.5": navbarIsOpen,
+        className={cls("absolute px-6 w-full transition-transform duration-500 -translate-y-full", {
+          "translate-y-0": navbarIsOpen,
         })}
         ref={navRef}
       >
-        <nav className={cls("py-8 px-10 border-b-2 border-l-2 border-r-2 border-black rounded-b-lg bg-white")}>
+        <nav className={cls("py-8 px-10 border-b-2 border-l-2 border-r-2 border-black rounded-b-lg bg-primary-bg")}>
           {links.map((link) => (
             <NavLink
               key={link.label}

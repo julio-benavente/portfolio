@@ -29,7 +29,7 @@ const Testimonials = () => {
   return (
     <div
       className={cls(
-        "relative py-12 px-8 border-base rounded-lg mx-2 mt-17 bg-white",
+        "relative py-12 px-8 border-base rounded-lg mx-2 mt-17 bg-primary-bg-700",
         "xs:bottom-0 xs:left-0 xs:mx-10 xs:z-10",
         "md:py-16 md:px-24 md:left-[0%] md:right-[0%] md:max-w-2xl md:mx-auto"
       )}

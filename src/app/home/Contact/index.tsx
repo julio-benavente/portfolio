@@ -59,10 +59,10 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="relative py-40 border-base-b">
+    <div id="contact" className="relative border-base-b bg-primary-bg">
       {/* <div cl/assName={cls("absolute top-0 left-0 w-full h-80 bg-white border-base border-t-0 border-x-0")}></div> */}
-      <div className={cls("relative container py-0 z-10", "lg:max-w-5xl lg:mx-auto")}>
-        <div className="p-10 border-base rounded-lg bg-primary-bg/60">
+      <div className={cls("relative container z-10", "lg:max-w-5xl lg:mx-auto")}>
+        <div className="p-10 border-base rounded-lg bg-primary-bg-700">
           <div className="flex flex-col items-center mb-12">
             <C.Badge className="mb-7">Contact</C.Badge>
 

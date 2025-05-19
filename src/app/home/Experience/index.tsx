@@ -12,7 +12,7 @@ import Testimonials from "./Testimonials";
 const index = () => {
   return (
     <div id="experience" className="bg-primary-bg relative z-10 border-base-b">
-      <div className={cls("container relative", "xs:pb-72")}>
+      <div className={cls("container relative")}>
         <div className="grid grid-flow-row gap-24">
           <PersonalImage />
           <div className={cls("grid grid-flow-row gap-y-24", "lg:grid-flow-col lg:gap-0 lg:grid-cols-12")}>

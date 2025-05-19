@@ -27,7 +27,15 @@ const TimelineItem = (props: TimelineItemType) => {
     <div className={cls("relative group border-l-2 border-black pl-6", "md:ml-52")}>
       <div
         className={cls(
-          "absolute w-5 aspect-square border-2 rounded-full border-black top-0 left-0 translate-x-[calc(-50%-1px)] bg-primary-200"
+          "absolute w-5 aspect-square border-2 rounded-full border-black top-0 left-0 translate-x-[calc(-50%-1px)] bg-primary-200",
+          [
+            "group-[:nth-child(1)]:bg-primary-200",
+            "group-[:nth-child(2)]:bg-primary-300",
+            "group-[:nth-child(3)]:bg-primary-400",
+            "group-[:nth-child(4)]:bg-primary-500",
+            "group-[:nth-child(5)]:bg-primary-600",
+            "group-[:nth-child(6)]:bg-primary-700",
+          ]
         )}
       ></div>
       <p className={cls("uppercase font-bold mb-2", "md:absolute md:top-0 md:-left-6 md:-translate-x-full")}>
