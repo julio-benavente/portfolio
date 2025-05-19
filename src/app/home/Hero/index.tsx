@@ -35,29 +35,34 @@ const HeadlineSide = () => {
         "lg:items-start lg:justify-center lg:col-start-1 lg:col-span-6 lg:mb-0"
       )}
     >
-      <C.Badge className="mb-7">Hello!</C.Badge>
+      <C.Badge className="mb-7">Hi, I&lsquo;m Julio!</C.Badge>
 
       <h1 className={cls("text-5xl font-bold text-center mb-4", "lg:text-left")}>
-        I&lsquo;m Julio Benavente,
-        <br /> a{" "}
         <span className="relative">
-          frontend
+          Frontend
           <span className="absolute w-[100%] inline-block -bottom-2 left-0">
             <Image src={Underline} alt="underline" />
           </span>
         </span>{" "}
-        developer.
+        developer, specializing in{" "}
+        <span className="relative">
+          React
+          <span className="absolute w-[100%] inline-block -bottom-2 left-0">
+            <Image src={Underline} alt="underline" />
+          </span>
+        </span>{" "}
+        and NextJS.
       </h1>
 
       <p className={cls("text-xl text-center mb-7", "lg:text-left")}>
-        I&lsquo;m a frontend developer specializing in React. I&lsquo;m very passionate and committed about the work I
-        do.
+        I&lsquo;m a frontend developer specializing in React and NextJS. I&lsquo;m very passionate and committed about
+        the work I do.
       </p>
 
       <C.Button
         icon={ArrowCircleDownOutlined}
         onClick={() => {
-          scroller.scrollTo("works", {
+          scroller.scrollTo("experience", {
             duration: 2000,
             delay: 100,
             smooth: "easeOutCubic",
@@ -66,7 +71,7 @@ const HeadlineSide = () => {
           });
         }}
       >
-        See My Works
+        Read about my experience
       </C.Button>
     </div>
   );
