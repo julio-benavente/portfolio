@@ -41,14 +41,14 @@ const HeadlineSide = () => {
         <span className="relative">
           Frontend
           <span className="absolute w-[100%] inline-block -bottom-2 left-0">
-            <Image src={Underline} alt="underline" priority={true} loading="eager" placeholder="blur" />
+            <Image src={Underline} alt="underline" priority={true} loading="eager" decoding="sync" placeholder="blur" />
           </span>
         </span>{" "}
         developer, specializing in{" "}
         <span className="relative">
           React
           <span className="absolute w-[100%] inline-block -bottom-2 left-0">
-            <Image src={Underline} alt="underline" priority={true} loading="eager" placeholder="blur" />
+            <Image src={Underline} alt="underline" priority={true} loading="eager" decoding="sync" placeholder="blur" />
           </span>
         </span>{" "}
         and NextJS.
