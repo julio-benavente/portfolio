@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/data/site";
 
-const links = [{ label: "Home", href: "#home" }, ...navLinks];
+// Links are "/#id" so they also work from other pages, like the 404 page
+const links = [{ label: "Home", href: "/#home" }, ...navLinks];
+const idOf = (href: string) => href.split("#")[1];
 
 // The navbar is about 65px tall, so a section becomes current once its top passes just below it
 const OFFSET = 120;
@@ -16,15 +18,21 @@ const NavLinks = () => {
     let frame = 0;
 
     const update = () => {
+      // Pages without these sections, like the 404 page, have no current link
+      if (!document.getElementById(idOf(links[0].href))) {
+        setActive("");
+        return;
+      }
+
       const bottomReached = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
-      let current = links[0].href.slice(1);
+      let current = idOf(links[0].href);
 
       if (bottomReached) {
-        current = links[links.length - 1].href.slice(1);
+        current = idOf(links[links.length - 1].href);
       } else {
         links.forEach(({ href }) => {
-          const section = document.querySelector<HTMLElement>(href);
-          if (section && section.getBoundingClientRect().top <= OFFSET) current = href.slice(1);
+          const section = document.getElementById(idOf(href));
+          if (section && section.getBoundingClientRect().top <= OFFSET) current = idOf(href);
         });
       }
 
@@ -50,7 +58,7 @@ const NavLinks = () => {
   return (
     <nav className="flex gap-5 text-base font-medium">
       {links.map(({ label, href }) => {
-        const isActive = active === href.slice(1);
+        const isActive = active === idOf(href);
 
         return (
           <a

@@ -6,7 +6,7 @@ export const education = [
   },
   {
     degree: "M.S. in Artificial Intelligence and Machine Learning",
-    school: "",
-    date: "In progress, started 2026",
+    school: "Western Governors University",
+    date: "Expected 2027",
   },
 ];

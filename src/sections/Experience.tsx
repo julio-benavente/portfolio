@@ -3,6 +3,7 @@ import { Download } from "@/ui/icons";
 import Reveal from "@/ui/Reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { experience } from "@/data/experience";
+import { skills } from "@/data/skills";
 import { site } from "@/data/site";
 
 const Experience = () => {
@@ -30,6 +31,18 @@ const Experience = () => {
           </li>
         ))}
       </ul>
+
+      <Reveal className="pt-8">
+        <h3 className="text-base font-medium">Skills</h3>
+        <dl className="mt-4 grid gap-4">
+          {skills.map((skill) => (
+            <div key={skill.group} className="grid gap-1 sm:grid-cols-[6rem_1fr] sm:gap-4">
+              <dt className="text-base text-muted-foreground">{skill.group}</dt>
+              <dd className="text-base leading-relaxed">{skill.items}</dd>
+            </div>
+          ))}
+        </dl>
+      </Reveal>
     </Section>
   );
 };

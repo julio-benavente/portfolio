@@ -12,7 +12,7 @@ interface SectionProps {
 
 const Section = ({ id, title, step, children }: SectionProps) => {
   return (
-    <section id={id} className="py-20 md:py-28">
+    <section id={id} className="py-12 md:py-16">
       <div className="container-narrow">
         {title && (
           <Reveal>
