@@ -38,3 +38,6 @@ next-env.d.ts
 .env
 # personal notes
 /notes
+
+# codegraph index
+/.codegraph
