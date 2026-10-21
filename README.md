@@ -1,34 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Julio Benavente | Portfolio
 
-## Getting Started
+Personal portfolio built with Next.js (App Router), TypeScript and Tailwind CSS.
 
-First, run the development server:
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build
+npm run start   # serve the build on port 3001
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contact form
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The form posts to `/api/email`, which sends two emails through [Resend](https://resend.com): one to me and one confirmation to the visitor.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Copy `.env.example` to `.env.local` and fill it in (also set the same variables where the site is hosted):
 
-## Learn More
+- `RESEND_API_KEY`: from https://resend.com/api-keys
+- `RESEND_FROM` (optional): the sender. Without it the Resend test sender is used, which only delivers to the email the Resend account was created with. After verifying `juliobenavente.com` in Resend, use `Julio Benavente <hello@juliobenavente.com>`.
 
-To learn more about Next.js, take a look at the following resources:
+Validation rules live in `src/lib/validation.ts` and are shared by the form and the API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `src/app`: layout, home page, 404 page, social share image and the email API
+- `src/sections`: page sections (Hero, Experience, Education, Contact, and Work, which is not shown for now)
+- `src/ui`: navbar, section titles, theme toggle and other site-level pieces
+- `src/components/ui`: button, input and textarea (shadcn style, built for Tailwind 3)
+- `src/data`: the site's content (experience, education, skills, projects, links)
+- `public/files`: the resume PDF
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Light and dark themes follow the browser setting and can be switched with the toggle in the navbar. Colors are CSS variables in `src/app/globals.css`.
