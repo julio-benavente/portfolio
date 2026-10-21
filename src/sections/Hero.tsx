@@ -39,9 +39,9 @@ const Hero = () => {
 
           <Reveal delay={0.3}>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={`mailto:${site.email}`} className={buttonVariants()}>
+              <a href="#contact" className={buttonVariants()}>
                 <Mail />
-              Get in touch
+                Get in touch
               </a>
               <CopyEmail />
             </div>
