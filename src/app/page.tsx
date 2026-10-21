@@ -1,21 +1,17 @@
-// "use client";
-
-import Hero from "./home/Hero";
-import SoftSkills from "./home/SoftSkills";
-import Experience from "./home/Experience";
-import Works from "./home/Works";
-import Contact from "./home/Contact";
-
-import "material-symbols/outlined.css";
+import Hero from "@/sections/Hero";
+import Work from "@/sections/Work";
+import Experience from "@/sections/Experience";
+import Education from "@/sections/Education";
+import Contact from "@/sections/Contact";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <Hero />
-      <SoftSkills />
+      <Work />
       <Experience />
-      {/* <Works /> */}
+      <Education />
       <Contact />
-    </div>
+    </main>
   );
 }

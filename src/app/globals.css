@@ -2,20 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  @apply font-cabinet;
+@layer base {
+  :root {
+    color-scheme: light;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
+    --card: 0 0% 95%;
+    --card-foreground: 0 0% 8%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 38%;
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 0 0% 30%;
+    --radius: 0.75rem;
+  }
+
+  /* The `dark` class is set on <html> by the inline script in layout.tsx and by ThemeToggle */
+  .dark {
+    color-scheme: dark;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 93%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 93%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 93%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 62%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 32%;
+    --input: 0 0% 32%;
+    --ring: 0 0% 70%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-background font-cabinet text-foreground antialiased;
+  }
+
+  /* One keyboard focus ring for every interactive element (links, buttons, inputs, cards) */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
 }
 
-p {
-  @apply text-text;
+@layer components {
+  /* Narrow centered column used by the nav, footer and text sections */
+  .container-narrow {
+    @apply mx-auto w-full max-w-2xl px-6;
+  }
+
+  /* Rows separated by border lines, no line on top so it doesn't sit right under a title */
+  .list-divided {
+    @apply divide-y divide-border border-b border-border;
+  }
+
+  /* One cell of the bordered project grid */
+  .grid-cell {
+    @apply border-b border-r border-border bg-foreground;
+  }
+
+  /* Project box: square at rest, rounds on hover so the dark layer behind `grid-cell` shows in the corners */
+  .project-card {
+    @apply flex h-full flex-col items-center justify-center gap-6 rounded-none bg-background p-6 transition-all duration-500 ease-out hover:rounded-[2.5rem] md:p-8;
+  }
+
+  /* Light diagonal hatching for empty grid slots. An SVG mask keeps every line the same
+     thickness at any screen scale; the color follows the theme. */
+  .bg-stripes {
+    background-color: hsl(var(--foreground) / 0.12);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36'%3E%3Cpath d='M-1 1L1 -1M0 36L36 0M35 37L37 35' stroke='black' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36'%3E%3Cpath d='M-1 1L1 -1M0 36L36 0M35 37L37 35' stroke='black' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  }
+
+  .nav-link {
+    @apply transition-colors duration-300 hover:text-foreground;
+  }
+
+  .link-subtle {
+    @apply text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground;
+  }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply text-text-headline font-bold;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
